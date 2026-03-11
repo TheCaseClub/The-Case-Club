@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -29,227 +28,226 @@
   .see-all { color:var(--white) !important; border-bottom-color:var(--white) !important; }
   h1, h2, .sec-title, .stat-n, .cat-name, .prod-price, .prod-brand, .feat-title, .how-step-t, .banner-stat-n, .ft-logo, .cart-hd-title, .cart-total-amt, .banner h2, .banner-eyebrow, .ft-heading, .sec-eyebrow, .hero-eyebrow, .tvc-lbl { color:var(--gold) !important; }
 
-/* CURSOR */
-#cur { position:fixed; pointer-events:none; z-index:9999; width:10px; height:10px; background:var(–gold); border-radius:50%; transform:translate(-50%,-50%); transition:transform .15s; }
-#cur-ring { position:fixed; pointer-events:none; z-index:9998; width:32px; height:32px; border:1px solid rgba(201,168,76,.3); border-radius:50%; transform:translate(-50%,-50%); }
+  /* CURSOR */
+  #cur { position:fixed; pointer-events:none; z-index:9999; width:10px; height:10px; background:var(--gold); border-radius:50%; transform:translate(-50%,-50%); transition:transform .15s; }
+  #cur-ring { position:fixed; pointer-events:none; z-index:9998; width:32px; height:32px; border:1px solid rgba(201,168,76,.3); border-radius:50%; transform:translate(-50%,-50%); }
 
-/* NAV */
-nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:22px 52px; background:rgba(0,0,0,.97); border-bottom:1px solid var(–border); }
-.logo { font-family:‘Playfair Display’,serif; font-size:20px; font-weight:900; letter-spacing:3px; text-decoration:none; color:var(–gold) !important; }
-.nav-links { display:flex; gap:34px; list-style:none; }
-.nav-links a { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(–muted); text-decoration:none; transition:color .3s; }
-.nav-links a:hover { color:var(–gold); }
-.cart-btn { display:flex; align-items:center; gap:8px; background:var(–gold); color:#000; padding:10px 22px; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; border:none; cursor:none; transition:background .3s; }
-.cart-btn:hover { background:var(–gold-light); }
-.cart-n { background:#000; color:var(–gold); border-radius:50%; width:17px; height:17px; font-size:10px; display:flex; align-items:center; justify-content:center; font-weight:700; }
+  /* NAV */
+  nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:22px 52px; background:rgba(0,0,0,.97); border-bottom:1px solid var(--border); }
+  .logo { font-family:'Playfair Display',serif; font-size:20px; font-weight:900; letter-spacing:3px; text-decoration:none; color:var(--gold) !important; }
+  .nav-links { display:flex; gap:34px; list-style:none; }
+  .nav-links a { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color .3s; }
+  .nav-links a:hover { color:var(--gold); }
+  .cart-btn { display:flex; align-items:center; gap:8px; background:var(--gold); color:#000; padding:10px 22px; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; border:none; cursor:none; transition:background .3s; }
+  .cart-btn:hover { background:var(--gold-light); }
+  .cart-n { background:#000; color:var(--gold); border-radius:50%; width:17px; height:17px; font-size:10px; display:flex; align-items:center; justify-content:center; font-weight:700; }
 
-/* HERO */
-.hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:130px 52px 80px; position:relative; overflow:hidden; background:var(–black); }
-.hero::before { content:’’; position:absolute; inset:0; background:radial-gradient(ellipse 60% 55% at 65% 55%,rgba(201,168,76,.05) 0%,transparent 70%); pointer-events:none; }
-.hero-grid { position:absolute; inset:0; pointer-events:none; opacity:.02; background:repeating-linear-gradient(0deg,transparent,transparent 59px,var(–gold) 59px,var(–gold) 60px), repeating-linear-gradient(90deg,transparent,transparent 59px,var(–gold) 59px,var(–gold) 60px); }
-.hero-eyebrow { font-size:10px; letter-spacing:5px; text-transform:uppercase; color:var(–gold); margin-bottom:24px; display:flex; align-items:center; gap:14px; opacity:0; animation:rise .9s ease .2s forwards; }
-.hero-eyebrow::before { content:’’; display:block; width:44px; height:1px; background:var(–gold); }
-h1.hero-title { font-family:‘Playfair Display’,serif; font-size:clamp(52px,9vw,118px); font-weight:900; line-height:.93; letter-spacing:-3px; color:var(–gold); max-width:960px; opacity:0; animation:rise 1s ease .4s forwards; }
-h1.hero-title em { font-style:italic; color:var(–white); }
-.hero-desc { margin-top:28px; font-size:16px; font-weight:300; line-height:1.8; color:var(–white); max-width:440px; opacity:0; animation:rise 1s ease .6s forwards; }
-.hero-cta { margin-top:44px; display:flex; gap:14px; align-items:center; justify-content:center; opacity:0; animation:rise 1s ease .8s forwards; }
-.btn-gold { background:var(–gold); color:#000; padding:15px 36px; font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; border:none; cursor:none; text-decoration:none; display:inline-block; transition:all .3s; }
-.btn-gold:hover { background:var(–gold-light); transform:translateY(-2px); }
-.btn-outline { border:1px solid #222; color:var(–muted); padding:15px 36px; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; text-decoration:none; display:inline-block; transition:all .3s; }
-.btn-outline:hover { border-color:var(–gold); color:var(–gold); }
-.hero-scroll { position:absolute; bottom:36px; left:52px; display:flex; align-items:center; gap:10px; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(–muted); opacity:0; animation:rise 1s ease 1.1s forwards; }
-.scroll-bar { width:1px; height:42px; background:linear-gradient(to bottom,var(–gold),transparent); }
+  /* HERO */
+  .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:130px 52px 80px; position:relative; overflow:hidden; background:var(--black); }
+  .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 55% at 65% 55%,rgba(201,168,76,.05) 0%,transparent 70%); pointer-events:none; }
+  .hero-grid { position:absolute; inset:0; pointer-events:none; opacity:.02; background:repeating-linear-gradient(0deg,transparent,transparent 59px,var(--gold) 59px,var(--gold) 60px), repeating-linear-gradient(90deg,transparent,transparent 59px,var(--gold) 59px,var(--gold) 60px); }
+  .hero-eyebrow { font-size:10px; letter-spacing:5px; text-transform:uppercase; color:var(--gold); margin-bottom:24px; display:flex; align-items:center; gap:14px; opacity:0; animation:rise .9s ease .2s forwards; }
+  .hero-eyebrow::before { content:''; display:block; width:44px; height:1px; background:var(--gold); }
+  h1.hero-title { font-family:'Playfair Display',serif; font-size:clamp(52px,9vw,118px); font-weight:900; line-height:.93; letter-spacing:-3px; color:var(--gold); max-width:960px; opacity:0; animation:rise 1s ease .4s forwards; }
+  h1.hero-title em { font-style:italic; color:var(--white); }
+  .hero-desc { margin-top:28px; font-size:16px; font-weight:300; line-height:1.8; color:var(--white); max-width:440px; opacity:0; animation:rise 1s ease .6s forwards; }
+  .hero-cta { margin-top:44px; display:flex; gap:14px; align-items:center; justify-content:center; opacity:0; animation:rise 1s ease .8s forwards; }
+  .btn-gold { background:var(--gold); color:#000; padding:15px 36px; font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; border:none; cursor:none; text-decoration:none; display:inline-block; transition:all .3s; }
+  .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); }
+  .btn-outline { border:1px solid #222; color:var(--muted); padding:15px 36px; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; text-decoration:none; display:inline-block; transition:all .3s; }
+  .btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+  .hero-scroll { position:absolute; bottom:36px; left:52px; display:flex; align-items:center; gap:10px; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); opacity:0; animation:rise 1s ease 1.1s forwards; }
+  .scroll-bar { width:1px; height:42px; background:linear-gradient(to bottom,var(--gold),transparent); }
 
-/* STATS */
-.stats { display:grid; grid-template-columns:repeat(4,1fr); background:var(–black); border-top:1px solid var(–border); border-bottom:1px solid var(–border); }
-.stat { padding:44px 40px; border-right:1px solid var(–border); }
-.stat:last-child { border-right:none; }
-.stat-n { font-family:‘Playfair Display’,serif; font-size:48px; font-weight:700; color:var(–gold); line-height:1; }
-.stat-l { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(–white); margin-top:8px; }
+  /* STATS */
+  .stats { display:grid; grid-template-columns:repeat(4,1fr); background:var(--black); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .stat { padding:44px 40px; border-right:1px solid var(--border); }
+  .stat:last-child { border-right:none; }
+  .stat-n { font-family:'Playfair Display',serif; font-size:48px; font-weight:700; color:var(--gold); line-height:1; }
+  .stat-l { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--white); margin-top:8px; }
 
-/* SECTION */
-.sec { padding:96px 52px; background:var(–black); }
-.sec-head { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; }
-.sec-eyebrow { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(–gold); margin-bottom:10px; display:flex; align-items:center; gap:10px; }
-.sec-eyebrow::before { content:’’; display:block; width:28px; height:1px; background:var(–gold); }
-.sec-title { font-family:‘Playfair Display’,serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; color:var(–gold); }
-.see-all { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(–gold); text-decoration:none; border-bottom:1px solid var(–gold); padding-bottom:2px; transition:opacity .3s; }
-.see-all:hover { opacity:.6; }
+  /* SECTION */
+  .sec { padding:96px 52px; background:var(--black); }
+  .sec-head { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; }
+  .sec-eyebrow { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; display:flex; align-items:center; gap:10px; }
+  .sec-eyebrow::before { content:''; display:block; width:28px; height:1px; background:var(--gold); }
+  .sec-title { font-family:'Playfair Display',serif; font-size:clamp(28px,3.5vw,46px); font-weight:700; color:var(--gold); }
+  .see-all { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:2px; transition:opacity .3s; }
+  .see-all:hover { opacity:.6; }
 
-/* TVCMALL BADGE */
-.tvc-badge { display:inline-flex; align-items:center; gap:10px; background:var(–card); border:1px solid var(–border); padding:11px 20px; margin-bottom:44px; }
-.tvc-dot { width:7px; height:7px; border-radius:50%; background:#4ade80; box-shadow:0 0 8px #4ade80; animation:blink 2s ease infinite; }
-.tvc-lbl { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(–gold); font-weight:600; }
-.tvc-sub { font-size:11px; letter-spacing:1px; color:var(–white); }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+  /* TVCMALL BADGE */
+  .tvc-badge { display:inline-flex; align-items:center; gap:10px; background:var(--card); border:1px solid var(--border); padding:11px 20px; margin-bottom:44px; }
+  .tvc-dot { width:7px; height:7px; border-radius:50%; background:#4ade80; box-shadow:0 0 8px #4ade80; animation:blink 2s ease infinite; }
+  .tvc-lbl { font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); font-weight:600; }
+  .tvc-sub { font-size:11px; letter-spacing:1px; color:var(--white); }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.35} }
 
-/* CATEGORIES */
-.cats { display:grid; grid-template-columns:repeat(5,1fr); gap:2px; }
-.cat { position:relative; height:300px; overflow:hidden; cursor:none; }
-.cat:first-child { grid-column:span 2; height:400px; }
-.cat-bg { position:absolute; inset:0; transition:transform .65s ease; }
-.cat:hover .cat-bg { transform:scale(1.07); }
-.cat-coques   .cat-bg { background:linear-gradient(135deg,#000008,#060f1e,#091828); }
-.cat-chargeurs .cat-bg { background:linear-gradient(135deg,#080600,#1a0f00,#2a1a00); }
-.cat-protection .cat-bg { background:linear-gradient(135deg,#000800,#061308,#081a09); }
-.cat-magsafe  .cat-bg { background:linear-gradient(135deg,#060010,#110620,#0c0418); }
-.cat-camera   .cat-bg { background:linear-gradient(135deg,#080600,#1a1200,#0e0c00); }
-.cat-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.92) 0%,transparent 55%); }
-.cat-icon { position:absolute; top:28px; left:28px; font-size:30px; opacity:.5; transition:opacity .3s,transform .3s; }
-.cat:hover .cat-icon { opacity:1; transform:scale(1.1); }
-.cat-ring { display:none; }
-.cat-body { position:absolute; bottom:22px; left:22px; right:22px; }
-.cat-name { font-family:‘Playfair Display’,serif; font-size:19px; font-weight:700; color:var(–gold); margin-bottom:4px; }
-.cat-cnt { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(–white); }
-.cat-arrow { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border:1px solid rgba(201,168,76,.2); margin-top:10px; color:var(–gold); font-size:13px; transition:all .3s; opacity:0; }
-.cat:hover .cat-arrow { opacity:1; background:var(–gold); border-color:var(–gold); color:#000; }
+  /* CATEGORIES */
+  .cats { display:grid; grid-template-columns:repeat(5,1fr); gap:2px; }
+  .cat { position:relative; height:300px; overflow:hidden; cursor:none; }
+  .cat:first-child { grid-column:span 2; height:400px; }
+  .cat-bg { position:absolute; inset:0; transition:transform .65s ease; }
+  .cat:hover .cat-bg { transform:scale(1.07); }
+  .cat-coques   .cat-bg { background:linear-gradient(135deg,#000008,#060f1e,#091828); }
+  .cat-chargeurs .cat-bg { background:linear-gradient(135deg,#080600,#1a0f00,#2a1a00); }
+  .cat-protection .cat-bg { background:linear-gradient(135deg,#000800,#061308,#081a09); }
+  .cat-magsafe  .cat-bg { background:linear-gradient(135deg,#060010,#110620,#0c0418); }
+  .cat-camera   .cat-bg { background:linear-gradient(135deg,#080600,#1a1200,#0e0c00); }
+  .cat-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.92) 0%,transparent 55%); }
+  .cat-icon { position:absolute; top:28px; left:28px; font-size:30px; opacity:.5; transition:opacity .3s,transform .3s; }
+  .cat:hover .cat-icon { opacity:1; transform:scale(1.1); }
+  .cat-ring { display:none; }
+  .cat-body { position:absolute; bottom:22px; left:22px; right:22px; }
+  .cat-name { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--gold); margin-bottom:4px; }
+  .cat-cnt { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--white); }
+  .cat-arrow { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border:1px solid rgba(201,168,76,.2); margin-top:10px; color:var(--gold); font-size:13px; transition:all .3s; opacity:0; }
+  .cat:hover .cat-arrow { opacity:1; background:var(--gold); border-color:var(--gold); color:#000; }
 
-/* PRODUCTS */
-.prods-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
-.prod { background:var(–card); overflow:hidden; cursor:pointer; transition:transform .4s; position:relative; border:1px solid var(–border); }
-.prod:hover { transform:translateY(-4px); }
-.prod-img { height:220px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-.prod-icon-wrap { width:110px; height:110px; display:flex; align-items:center; justify-content:center; filter:drop-shadow(0 0 30px rgba(201,168,76,.25)); transition:transform .4s; }
-.prod-icon-wrap svg { width:100%; height:100%; }
-.prod:hover .prod-icon-wrap { transform:scale(1.12) translateY(-4px); }
-.prod-badge { position:absolute; top:13px; left:13px; font-size:9px; letter-spacing:2px; text-transform:uppercase; padding:4px 9px; font-weight:700; }
-.b-best { background:var(–gold); color:#000; }
-.b-new  { background:#fff; color:#000; }
-.b-sale { background:#c94c4c; color:#fff; }
-.prod-info { padding:16px 18px; border-top:1px solid var(–border); }
-.prod-brand { font-size:9px; letter-spacing:2.5px; text-transform:uppercase; color:var(–gold); margin-bottom:5px; }
-.prod-name  { font-size:13px; color:var(–white); line-height:1.45; margin-bottom:13px; }
-.prod-foot  { display:flex; justify-content:space-between; align-items:center; }
-.prod-price { font-family:‘Playfair Display’,serif; font-size:20px; color:var(–gold); }
-.prod-old   { font-size:12px; color:var(–muted); text-decoration:line-through; margin-left:6px; }
-.add-btn { border:1px solid var(–border); background:transparent; color:var(–muted); width:36px; height:36px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .3s; flex-shrink:0; }
-.add-btn:hover { background:var(–gold); border-color:var(–gold); color:#000; }
-.add-btn svg { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  /* PRODUCTS */
+  .prods-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+  .prod { background:var(--card); overflow:hidden; cursor:pointer; transition:transform .4s; position:relative; border:1px solid var(--border); }
+  .prod:hover { transform:translateY(-4px); }
+  .prod-img { height:220px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+  .prod-icon-wrap { width:110px; height:110px; display:flex; align-items:center; justify-content:center; filter:drop-shadow(0 0 30px rgba(201,168,76,.25)); transition:transform .4s; }
+  .prod-icon-wrap svg { width:100%; height:100%; }
+  .prod:hover .prod-icon-wrap { transform:scale(1.12) translateY(-4px); }
+  .prod-badge { position:absolute; top:13px; left:13px; font-size:9px; letter-spacing:2px; text-transform:uppercase; padding:4px 9px; font-weight:700; }
+  .b-best { background:var(--gold); color:#000; }
+  .b-new  { background:#fff; color:#000; }
+  .b-sale { background:#c94c4c; color:#fff; }
+  .prod-info { padding:16px 18px; border-top:1px solid var(--border); }
+  .prod-brand { font-size:9px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:5px; }
+  .prod-name  { font-size:13px; color:var(--white); line-height:1.45; margin-bottom:13px; }
+  .prod-foot  { display:flex; justify-content:space-between; align-items:center; }
+  .prod-price { font-family:'Playfair Display',serif; font-size:20px; color:var(--gold); }
+  .prod-old   { font-size:12px; color:var(--muted); text-decoration:line-through; margin-left:6px; }
+  .add-btn { border:1px solid var(--border); background:transparent; color:var(--muted); width:36px; height:36px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .3s; flex-shrink:0; }
+  .add-btn:hover { background:var(--gold); border-color:var(--gold); color:#000; }
+  .add-btn svg { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 
-.cat-filters { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
-.cf-btn { border:1px solid var(–border); background:transparent; color:var(–muted); padding:7px 16px; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; cursor:pointer; transition:all .2s; }
-.cf-btn:hover, .cf-btn.cf-active { border-color:var(–gold); color:var(–gold); background:rgba(201,168,76,.08); }
-.prod-modal { position:fixed; inset:0; z-index:500; display:flex; align-items:flex-end; pointer-events:none; }
-.prod-modal.open { pointer-events:all; }
-.prod-modal-overlay { position:absolute; inset:0; background:rgba(0,0,0,.8); opacity:0; transition:opacity .35s; backdrop-filter:blur(4px); }
-.prod-modal.open .prod-modal-overlay { opacity:1; }
-.prod-modal-panel { position:relative; width:100%; max-height:90vh; background:var(–card); border-top:1px solid var(–border); border-radius:24px 24px 0 0; padding:32px 28px; transform:translateY(100%); transition:transform .4s cubic-bezier(.16,1,.3,1); overflow-y:auto; }
-.prod-modal.open .prod-modal-panel { transform:translateY(0); }
-.prod-modal-img { width:100%; height:220px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:90px; margin-bottom:24px; position:relative; }
-.prod-modal-close { position:absolute; top:16px; right:16px; width:36px; height:36px; border:1px solid var(–border); background:transparent; color:var(–white); font-size:18px; display:flex; align-items:center; justify-content:center; cursor:pointer; border-radius:50%; }
-.prod-modal-brand { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(–gold); margin-bottom:8px; }
-.prod-modal-name { font-family:‘Playfair Display’,serif; font-size:20px; color:var(–white); margin-bottom:12px; line-height:1.3; }
-.prod-modal-desc { font-size:13px; color:var(–muted); line-height:1.7; margin-bottom:24px; }
-.prod-modal-prices { display:flex; align-items:baseline; gap:10px; margin-bottom:28px; }
-.prod-modal-price { font-family:‘Playfair Display’,serif; font-size:32px; color:var(–gold); }
-.prod-modal-old { font-size:16px; color:var(–muted); text-decoration:line-through; }
-.prod-modal-btn { width:100%; padding:16px; background:var(–gold); color:#000; font-size:13px; letter-spacing:2px; text-transform:uppercase; font-weight:700; border:none; cursor:pointer; transition:opacity .2s; }
-.prod-modal-btn:hover { opacity:.85; }
+  .cat-filters { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+  .cf-btn { border:1px solid var(--border); background:transparent; color:var(--muted); padding:7px 16px; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; cursor:pointer; transition:all .2s; }
+  .cf-btn:hover, .cf-btn.cf-active { border-color:var(--gold); color:var(--gold); background:rgba(201,168,76,.08); }
+  .prod-modal { position:fixed; inset:0; z-index:500; display:flex; align-items:flex-end; pointer-events:none; }
+  .prod-modal.open { pointer-events:all; }
+  .prod-modal-overlay { position:absolute; inset:0; background:rgba(0,0,0,.8); opacity:0; transition:opacity .35s; backdrop-filter:blur(4px); }
+  .prod-modal.open .prod-modal-overlay { opacity:1; }
+  .prod-modal-panel { position:relative; width:100%; max-height:90vh; background:var(--card); border-top:1px solid var(--border); border-radius:24px 24px 0 0; padding:32px 28px; transform:translateY(100%); transition:transform .4s cubic-bezier(.16,1,.3,1); overflow-y:auto; }
+  .prod-modal.open .prod-modal-panel { transform:translateY(0); }
+  .prod-modal-img { width:100%; height:220px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:90px; margin-bottom:24px; position:relative; }
+  .prod-modal-close { position:absolute; top:16px; right:16px; width:36px; height:36px; border:1px solid var(--border); background:transparent; color:var(--white); font-size:18px; display:flex; align-items:center; justify-content:center; cursor:pointer; border-radius:50%; }
+  .prod-modal-brand { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+  .prod-modal-name { font-family:'Playfair Display',serif; font-size:20px; color:var(--white); margin-bottom:12px; line-height:1.3; }
+  .prod-modal-desc { font-size:13px; color:var(--muted); line-height:1.7; margin-bottom:24px; }
+  .prod-modal-prices { display:flex; align-items:baseline; gap:10px; margin-bottom:28px; }
+  .prod-modal-price { font-family:'Playfair Display',serif; font-size:32px; color:var(--gold); }
+  .prod-modal-old { font-size:16px; color:var(--muted); text-decoration:line-through; }
+  .prod-modal-btn { width:100%; padding:16px; background:var(--gold); color:#000; font-size:13px; letter-spacing:2px; text-transform:uppercase; font-weight:700; border:none; cursor:pointer; transition:opacity .2s; }
+  .prod-modal-btn:hover { opacity:.85; }
 
-/* HOW */
-.how { padding:80px 52px; border-top:1px solid var(–border); border-bottom:1px solid var(–border); background:var(–dark); }
-.how-title { font-family:‘Playfair Display’,serif; font-size:clamp(26px,3vw,42px); font-weight:700; color:var(–gold); text-align:center; margin-bottom:56px; }
-.how-grid { display:grid; grid-template-columns:repeat(4,1fr); }
-.how-step { padding:0 36px; border-right:1px solid var(–border); text-align:center; }
-.how-step:last-child { border-right:none; }
-.how-num { font-family:‘Playfair Display’,serif; font-size:54px; font-weight:900; color:rgba(201,168,76,.1); line-height:1; }
-.how-icon { font-size:28px; margin:-14px 0 14px; }
-.how-step-t { font-size:13px; font-weight:600; color:var(–gold); margin-bottom:8px; }
-.how-step-d { font-size:13px; color:var(–white); line-height:1.65; }
+  /* HOW */
+  .how { padding:80px 52px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--dark); }
+  .how-title { font-family:'Playfair Display',serif; font-size:clamp(26px,3vw,42px); font-weight:700; color:var(--gold); text-align:center; margin-bottom:56px; }
+  .how-grid { display:grid; grid-template-columns:repeat(4,1fr); }
+  .how-step { padding:0 36px; border-right:1px solid var(--border); text-align:center; }
+  .how-step:last-child { border-right:none; }
+  .how-num { font-family:'Playfair Display',serif; font-size:54px; font-weight:900; color:rgba(201,168,76,.1); line-height:1; }
+  .how-icon { font-size:28px; margin:-14px 0 14px; }
+  .how-step-t { font-size:13px; font-weight:600; color:var(--gold); margin-bottom:8px; }
+  .how-step-d { font-size:13px; color:var(--white); line-height:1.65; }
 
-/* BANNER */
-.banner { margin:0 52px; padding:72px 68px; background:var(–card); border:1px solid var(–border); display:flex; justify-content:space-between; align-items:center; position:relative; overflow:hidden; }
-.banner::before { content:’’; position:absolute; inset:0; background:radial-gradient(ellipse 50% 80% at 80% 50%,rgba(201,168,76,.05) 0%,transparent 70%); pointer-events:none; }
-.banner-eyebrow { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(–gold); margin-bottom:12px; }
-.banner h2 { font-family:‘Playfair Display’,serif; font-size:clamp(24px,3vw,40px); font-weight:700; color:var(–gold); max-width:440px; line-height:1.2; }
-.banner p { font-size:14px; color:var(–white); margin-top:12px; max-width:380px; line-height:1.7; }
-.banner-stat-n { font-family:‘Playfair Display’,serif; font-size:70px; font-weight:900; color:var(–gold); line-height:1; }
-.banner-stat-l { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(–white); margin-top:6px; }
-.banner-right { text-align:right; }
+  /* BANNER */
+  .banner { margin:0 52px; padding:72px 68px; background:var(--card); border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; position:relative; overflow:hidden; }
+  .banner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 50% 80% at 80% 50%,rgba(201,168,76,.05) 0%,transparent 70%); pointer-events:none; }
+  .banner-eyebrow { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+  .banner h2 { font-family:'Playfair Display',serif; font-size:clamp(24px,3vw,40px); font-weight:700; color:var(--gold); max-width:440px; line-height:1.2; }
+  .banner p { font-size:14px; color:var(--white); margin-top:12px; max-width:380px; line-height:1.7; }
+  .banner-stat-n { font-family:'Playfair Display',serif; font-size:70px; font-weight:900; color:var(--gold); line-height:1; }
+  .banner-stat-l { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--white); margin-top:6px; }
+  .banner-right { text-align:right; }
 
-/* FEATURES */
-.feats { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(–border); background:var(–black); }
-.feat { padding:46px 38px; border-right:1px solid var(–border); }
-.feat:last-child { border-right:none; }
-.feat-icon { font-size:24px; margin-bottom:16px; }
-.feat-title { font-size:14px; font-weight:600; color:var(–gold); margin-bottom:8px; }
-.feat-desc { font-size:13px; color:var(–white); line-height:1.65; }
+  /* FEATURES */
+  .feats { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--border); background:var(--black); }
+  .feat { padding:46px 38px; border-right:1px solid var(--border); }
+  .feat:last-child { border-right:none; }
+  .feat-icon { font-size:24px; margin-bottom:16px; }
+  .feat-title { font-size:14px; font-weight:600; color:var(--gold); margin-bottom:8px; }
+  .feat-desc { font-size:13px; color:var(--white); line-height:1.65; }
 
-/* FOOTER */
-footer { background:var(–dark); border-top:1px solid var(–border); padding:60px 52px 36px; }
-.ft-top { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:52px; margin-bottom:52px; }
-.ft-logo { font-family:‘Playfair Display’,serif; font-size:24px; font-weight:900; color:var(–gold); margin-bottom:12px; }
-.ft-desc { font-size:13px; color:var(–white); line-height:1.75; max-width:240px; }
-.ft-heading { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(–gold); margin-bottom:16px; }
-.ft-links { list-style:none; }
-.ft-links li { margin-bottom:10px; }
-.ft-links a { font-size:13px; color:var(–white); text-decoration:none; transition:color .3s; }
-.ft-links a:hover { color:var(–gold); }
-.ft-bottom { border-top:1px solid var(–border); padding-top:28px; display:flex; justify-content:space-between; align-items:center; }
-.ft-copy { font-size:12px; color:var(–muted); }
-.ft-pay { display:flex; gap:7px; }
-.pay { background:var(–card); border:1px solid var(–border); padding:5px 11px; font-size:10px; color:var(–muted); letter-spacing:1px; }
+  /* FOOTER */
+  footer { background:var(--dark); border-top:1px solid var(--border); padding:60px 52px 36px; }
+  .ft-top { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:52px; margin-bottom:52px; }
+  .ft-logo { font-family:'Playfair Display',serif; font-size:24px; font-weight:900; color:var(--gold); margin-bottom:12px; }
+  .ft-desc { font-size:13px; color:var(--white); line-height:1.75; max-width:240px; }
+  .ft-heading { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+  .ft-links { list-style:none; }
+  .ft-links li { margin-bottom:10px; }
+  .ft-links a { font-size:13px; color:var(--white); text-decoration:none; transition:color .3s; }
+  .ft-links a:hover { color:var(--gold); }
+  .ft-bottom { border-top:1px solid var(--border); padding-top:28px; display:flex; justify-content:space-between; align-items:center; }
+  .ft-copy { font-size:12px; color:var(--muted); }
+  .ft-pay { display:flex; gap:7px; }
+  .pay { background:var(--card); border:1px solid var(--border); padding:5px 11px; font-size:10px; color:var(--muted); letter-spacing:1px; }
 
-/* CART */
-.cart-overlay { position:fixed; inset:0; background:rgba(0,0,0,.8); z-index:300; opacity:0; pointer-events:none; transition:opacity .3s; backdrop-filter:blur(4px); }
-.cart-overlay.open { opacity:1; pointer-events:all; }
-.cart-panel { position:fixed; top:0; right:0; width:420px; height:100vh; background:var(–dark); border-left:1px solid var(–border); z-index:301; transform:translateX(100%); transition:transform .4s ease; display:flex; flex-direction:column; }
-.cart-panel.open { transform:translateX(0); }
-.cart-hd { padding:28px 30px; border-bottom:1px solid var(–border); display:flex; justify-content:space-between; align-items:center; }
-.cart-hd-title { font-family:‘Playfair Display’,serif; font-size:22px; color:var(–gold); }
-.cart-x { background:none; border:none; color:var(–muted); font-size:18px; cursor:none; transition:color .3s; }
-.cart-x:hover { color:var(–white); }
-.cart-body { flex:1; overflow-y:auto; padding:20px 30px; }
-.c-empty { text-align:center; padding:56px 0; color:var(–muted); }
-.c-empty-icon { font-size:42px; margin-bottom:12px; }
-.c-item { display:flex; gap:13px; padding:14px 0; border-bottom:1px solid var(–border); }
-.c-thumb { width:60px; height:60px; background:var(–card); display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; }
-.c-name { font-size:13px; color:var(–white); margin-bottom:3px; line-height:1.4; }
-.c-price { font-size:16px; color:var(–gold); font-family:‘Playfair Display’,serif; }
-.c-qty { display:flex; align-items:center; gap:7px; margin-top:7px; }
-.q-btn { width:22px; height:22px; border:1px solid var(–border); background:none; color:var(–white); cursor:none; display:flex; align-items:center; justify-content:center; font-size:14px; transition:all .2s; }
-.q-btn:hover { background:var(–gold); border-color:var(–gold); color:#000; }
-.q-n { font-size:12px; min-width:18px; text-align:center; color:var(–white); }
-.cart-ft { padding:28px 30px; border-top:1px solid var(–border); }
-.cart-total-row { display:flex; justify-content:space-between; margin-bottom:18px; }
-.cart-total-lbl { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(–muted); }
-.cart-total-amt { font-family:‘Playfair Display’,serif; font-size:26px; color:var(–gold); }
-.checkout-btn { width:100%; background:var(–gold); color:#000; border:none; padding:16px; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; cursor:none; transition:background .3s; }
-.checkout-btn:hover { background:var(–gold-light); }
+  /* CART */
+  .cart-overlay { position:fixed; inset:0; background:rgba(0,0,0,.8); z-index:300; opacity:0; pointer-events:none; transition:opacity .3s; backdrop-filter:blur(4px); }
+  .cart-overlay.open { opacity:1; pointer-events:all; }
+  .cart-panel { position:fixed; top:0; right:0; width:420px; height:100vh; background:var(--dark); border-left:1px solid var(--border); z-index:301; transform:translateX(100%); transition:transform .4s ease; display:flex; flex-direction:column; }
+  .cart-panel.open { transform:translateX(0); }
+  .cart-hd { padding:28px 30px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+  .cart-hd-title { font-family:'Playfair Display',serif; font-size:22px; color:var(--gold); }
+  .cart-x { background:none; border:none; color:var(--muted); font-size:18px; cursor:none; transition:color .3s; }
+  .cart-x:hover { color:var(--white); }
+  .cart-body { flex:1; overflow-y:auto; padding:20px 30px; }
+  .c-empty { text-align:center; padding:56px 0; color:var(--muted); }
+  .c-empty-icon { font-size:42px; margin-bottom:12px; }
+  .c-item { display:flex; gap:13px; padding:14px 0; border-bottom:1px solid var(--border); }
+  .c-thumb { width:60px; height:60px; background:var(--card); display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; }
+  .c-name { font-size:13px; color:var(--white); margin-bottom:3px; line-height:1.4; }
+  .c-price { font-size:16px; color:var(--gold); font-family:'Playfair Display',serif; }
+  .c-qty { display:flex; align-items:center; gap:7px; margin-top:7px; }
+  .q-btn { width:22px; height:22px; border:1px solid var(--border); background:none; color:var(--white); cursor:none; display:flex; align-items:center; justify-content:center; font-size:14px; transition:all .2s; }
+  .q-btn:hover { background:var(--gold); border-color:var(--gold); color:#000; }
+  .q-n { font-size:12px; min-width:18px; text-align:center; color:var(--white); }
+  .cart-ft { padding:28px 30px; border-top:1px solid var(--border); }
+  .cart-total-row { display:flex; justify-content:space-between; margin-bottom:18px; }
+  .cart-total-lbl { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+  .cart-total-amt { font-family:'Playfair Display',serif; font-size:26px; color:var(--gold); }
+  .checkout-btn { width:100%; background:var(--gold); color:#000; border:none; padding:16px; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; cursor:none; transition:background .3s; }
+  .checkout-btn:hover { background:var(--gold-light); }
 
-/* TOAST */
-.toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(80px); background:var(–gold); color:#000; padding:12px 26px; font-size:12px; letter-spacing:1px; font-weight:700; z-index:400; transition:transform .4s ease; }
-.toast.show { transform:translateX(-50%) translateY(0); }
+  /* TOAST */
+  .toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(80px); background:var(--gold); color:#000; padding:12px 26px; font-size:12px; letter-spacing:1px; font-weight:700; z-index:400; transition:transform .4s ease; }
+  .toast.show { transform:translateX(-50%) translateY(0); }
 
-/* ANIM */
-@keyframes rise { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:translateY(0)} }
+  /* ANIM */
+  @keyframes rise { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:translateY(0)} }
 
-::-webkit-scrollbar { width:3px; }
-::-webkit-scrollbar-track { background:#000; }
-::-webkit-scrollbar-thumb { background:var(–gold); }
+  ::-webkit-scrollbar { width:3px; }
+  ::-webkit-scrollbar-track { background:#000; }
+  ::-webkit-scrollbar-thumb { background:var(--gold); }
 
-@media(max-width:768px){
-nav { padding:16px 20px; }
-.nav-links { display:none; }
-.hero { padding:110px 22px 70px; }
-.stats { grid-template-columns:repeat(2,1fr); }
-.stat { padding:26px 20px; }
-.sec { padding:60px 22px; }
-.cats { grid-template-columns:repeat(2,1fr); }
-.cat:first-child { grid-column:span 2; }
-.prods-grid { grid-template-columns:repeat(2,1fr); }
-.banner { margin:0 22px; padding:44px 28px; flex-direction:column; gap:28px; }
-.banner-right { text-align:left; }
-.feats { grid-template-columns:repeat(2,1fr); }
-.feat { border-right:none; border-bottom:1px solid var(–border); }
-.how-grid { grid-template-columns:repeat(2,1fr); }
-.how-step { border-right:none; padding-bottom:32px; }
-.ft-top { grid-template-columns:1fr; gap:32px; }
-.ft-bottom { flex-direction:column; gap:14px; }
-.cart-panel { width:100%; }
-}
+  @media(max-width:768px){
+    nav { padding:16px 20px; }
+    .nav-links { display:none; }
+    .hero { padding:110px 22px 70px; }
+    .stats { grid-template-columns:repeat(2,1fr); }
+    .stat { padding:26px 20px; }
+    .sec { padding:60px 22px; }
+    .cats { grid-template-columns:repeat(2,1fr); }
+    .cat:first-child { grid-column:span 2; }
+    .prods-grid { grid-template-columns:repeat(2,1fr); }
+    .banner { margin:0 22px; padding:44px 28px; flex-direction:column; gap:28px; }
+    .banner-right { text-align:left; }
+    .feats { grid-template-columns:repeat(2,1fr); }
+    .feat { border-right:none; border-bottom:1px solid var(--border); }
+    .how-grid { grid-template-columns:repeat(2,1fr); }
+    .how-step { border-right:none; padding-bottom:32px; }
+    .ft-top { grid-template-columns:1fr; gap:32px; }
+    .ft-bottom { flex-direction:column; gap:14px; }
+    .cart-panel { width:100%; }
+  }
 </style>
-
 </head>
 <body>
 
@@ -258,7 +256,6 @@ nav { padding:16px 20px; }
 <div class="toast" id="toast">✓ Ajouté au panier</div>
 
 <!-- CART -->
-
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 <div class="cart-panel" id="cartPanel">
   <div class="cart-hd">
@@ -273,7 +270,6 @@ nav { padding:16px 20px; }
 </div>
 
 <!-- NAV -->
-
 <nav>
   <a href="#" class="logo">The Case Club</a>
   <ul class="nav-links">
@@ -286,7 +282,6 @@ nav { padding:16px 20px; }
 </nav>
 
 <!-- HERO -->
-
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-eyebrow">Collection 2026 — Accessoires Premium</div>
@@ -296,11 +291,10 @@ nav { padding:16px 20px; }
     <a href="#prods" class="btn-gold">Explorer la collection</a>
     <a href="#cats" class="btn-outline">Voir les catégories</a>
   </div>
-
+  
 </section>
 
 <!-- STATS -->
-
 <div class="stats">
   <div class="stat"><div class="stat-n">500+</div><div class="stat-l">Produits disponibles</div></div>
   <div class="stat"><div class="stat-n">48h</div><div class="stat-l">Livraison express</div></div>
@@ -309,7 +303,6 @@ nav { padding:16px 20px; }
 </div>
 
 <!-- CATEGORIES -->
-
 <section class="sec" id="cats">
   <div class="sec-head">
     <div>
@@ -348,7 +341,6 @@ nav { padding:16px 20px; }
 </section>
 
 <!-- PRODUCTS -->
-
 <section class="sec" id="prods" style="padding-top:0">
   <div class="sec-head">
     <div>
@@ -366,282 +358,279 @@ nav { padding:16px 20px; }
   </div>
   <div class="prods-grid" id="prodsGrid">
 
-```
-<div class="prod" data-cat="coques" data-id="1">
-  <div class="prod-img" style="background:#0f0a00">
-    <div class="prod-badge b-best">Best</div>
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><rect x="18" y="8" width="44" height="64" rx="7" stroke="#C9A84C" stroke-width="2.5"/><rect x="22" y="14" width="36" height="46" rx="3" fill="#C9A84C" fill-opacity=".07"/><circle cx="40" cy="67" r="2.5" stroke="#C9A84C" stroke-width="2"/><line x1="34" y1="11" x2="46" y2="11" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="prod" data-cat="coques" data-id="1">
+      <div class="prod-img" style="background:#0f0a00">
+        <div class="prod-badge b-best">Best</div>
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><rect x="18" y="8" width="44" height="64" rx="7" stroke="#C9A84C" stroke-width="2.5"/><rect x="22" y="14" width="36" height="46" rx="3" fill="#C9A84C" fill-opacity=".07"/><circle cx="40" cy="67" r="2.5" stroke="#C9A84C" stroke-width="2"/><line x1="34" y1="11" x2="46" y2="11" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">TORRAS — iPhone 16</div>
+        <div class="prod-name">Ostand Q3 Spin Coque MagSafe Kickstand Rotatif PC+TPU</div>
+        <div class="prod-foot">
+          <span class="prod-price">24.99&euro;</span>
+          <button class="add-btn" data-id="1">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">TORRAS — iPhone 16</div>
-    <div class="prod-name">Ostand Q3 Spin Coque MagSafe Kickstand Rotatif PC+TPU</div>
-    <div class="prod-foot">
-      <span class="prod-price">24.99&euro;</span>
-      <button class="add-btn" data-id="1">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="coques" data-id="2">
-  <div class="prod-img" style="background:#00080f">
-    <div class="prod-badge b-sale">Promo</div>
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><rect x="12" y="20" width="56" height="40" rx="5" stroke="#C9A84C" stroke-width="2.5"/><rect x="12" y="28" width="56" height="12" fill="#C9A84C" fill-opacity=".1"/><rect x="48" y="31" width="14" height="7" rx="3.5" stroke="#C9A84C" stroke-width="2"/><line x1="20" y1="50" x2="36" y2="50" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="prod" data-cat="coques" data-id="2">
+      <div class="prod-img" style="background:#00080f">
+        <div class="prod-badge b-sale">Promo</div>
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><rect x="12" y="20" width="56" height="40" rx="5" stroke="#C9A84C" stroke-width="2.5"/><rect x="12" y="28" width="56" height="12" fill="#C9A84C" fill-opacity=".1"/><rect x="48" y="31" width="14" height="7" rx="3.5" stroke="#C9A84C" stroke-width="2"/><line x1="20" y1="50" x2="36" y2="50" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">ESEBLE — iPhone 17 Pro</div>
+        <div class="prod-name">Coque Vintage PU Leather avec Porte-Carte — Bleu</div>
+        <div class="prod-foot">
+          <div><span class="prod-price">21.99&euro;</span><span class="prod-old">29.99&euro;</span></div>
+          <button class="add-btn" data-id="2">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">ESEBLE — iPhone 17 Pro</div>
-    <div class="prod-name">Coque Vintage PU Leather avec Porte-Carte — Bleu</div>
-    <div class="prod-foot">
-      <div><span class="prod-price">21.99&euro;</span><span class="prod-old">29.99&euro;</span></div>
-      <button class="add-btn" data-id="2">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="coques" data-id="3">
-  <div class="prod-img" style="background:#080808">
-    <div class="prod-badge b-new">New</div>
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><rect x="18" y="8" width="44" height="64" rx="7" stroke="#C9A84C" stroke-width="2.5"/><line x1="22" y1="22" x2="58" y2="22" stroke="#C9A84C" stroke-width="1" stroke-opacity=".4"/><line x1="22" y1="30" x2="58" y2="30" stroke="#C9A84C" stroke-width="1" stroke-opacity=".4"/><line x1="22" y1="38" x2="58" y2="38" stroke="#C9A84C" stroke-width="1" stroke-opacity=".4"/><line x1="22" y1="46" x2="58" y2="46" stroke="#C9A84C" stroke-width="1" stroke-opacity=".4"/><circle cx="40" cy="67" r="2.5" stroke="#C9A84C" stroke-width="2"/></svg>
+    <div class="prod" data-cat="coques" data-id="3">
+      <div class="prod-img" style="background:#080808">
+        <div class="prod-badge b-new">New</div>
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><rect x="18" y="8" width="44" height="64" rx="7" stroke="#C9A84C" stroke-width="2.5"/><line x1="22" y1="22" x2="58" y2="22" stroke="#C9A84C" stroke-width="1" stroke-opacity=".4"/><line x1="22" y1="30" x2="58" y2="30" stroke="#C9A84C" stroke-width="1" stroke-opacity=".4"/><line x1="22" y1="38" x2="58" y2="38" stroke="#C9A84C" stroke-width="1" stroke-opacity=".4"/><line x1="22" y1="46" x2="58" y2="46" stroke="#C9A84C" stroke-width="1" stroke-opacity=".4"/><circle cx="40" cy="67" r="2.5" stroke="#C9A84C" stroke-width="2"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">iPhone 17 Pro</div>
+        <div class="prod-name">Coque Cloth Texture TPU Leather Porte-Carte &amp; Kickstand</div>
+        <div class="prod-foot">
+          <span class="prod-price">19.99&euro;</span>
+          <button class="add-btn" data-id="3">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">iPhone 17 Pro</div>
-    <div class="prod-name">Coque Cloth Texture TPU Leather Porte-Carte &amp; Kickstand</div>
-    <div class="prod-foot">
-      <span class="prod-price">19.99&euro;</span>
-      <button class="add-btn" data-id="3">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="coques" data-id="4">
-  <div class="prod-img" style="background:#06060f">
-    <div class="prod-badge b-best">Best</div>
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><rect x="10" y="22" width="60" height="36" rx="5" stroke="#C9A84C" stroke-width="2.5"/><rect x="10" y="30" width="60" height="10" fill="#C9A84C" fill-opacity=".15"/><circle cx="56" cy="48" r="5" stroke="#C9A84C" stroke-width="2"/><circle cx="62" cy="48" r="5" stroke="#C9A84C" stroke-width="2" fill="#C9A84C" fill-opacity=".1"/></svg>
+    <div class="prod" data-cat="coques" data-id="4">
+      <div class="prod-img" style="background:#06060f">
+        <div class="prod-badge b-best">Best</div>
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><rect x="10" y="22" width="60" height="36" rx="5" stroke="#C9A84C" stroke-width="2.5"/><rect x="10" y="30" width="60" height="10" fill="#C9A84C" fill-opacity=".15"/><circle cx="56" cy="48" r="5" stroke="#C9A84C" stroke-width="2"/><circle cx="62" cy="48" r="5" stroke="#C9A84C" stroke-width="2" fill="#C9A84C" fill-opacity=".1"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">DUX DUCIS — Samsung S24</div>
+        <div class="prod-name">Coque Portefeuille Cuir Magnetique 3 Cartes — Noir</div>
+        <div class="prod-foot">
+          <span class="prod-price">28.99&euro;</span>
+          <button class="add-btn" data-id="4">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">DUX DUCIS — Samsung S24</div>
-    <div class="prod-name">Coque Portefeuille Cuir Magnetique 3 Cartes — Noir</div>
-    <div class="prod-foot">
-      <span class="prod-price">28.99&euro;</span>
-      <button class="add-btn" data-id="4">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="chargeurs" data-id="5">
-  <div class="prod-img" style="background:#0f0500">
-    <div class="prod-badge b-sale">Promo</div>
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><rect x="24" y="14" width="32" height="40" rx="5" stroke="#C9A84C" stroke-width="2.5"/><path d="M36 54v4a4 4 0 008 0v-4" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/><path d="M43 28l-8 12h9l-8 12" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="prod" data-cat="chargeurs" data-id="5">
+      <div class="prod-img" style="background:#0f0500">
+        <div class="prod-badge b-sale">Promo</div>
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><rect x="24" y="14" width="32" height="40" rx="5" stroke="#C9A84C" stroke-width="2.5"/><path d="M36 54v4a4 4 0 008 0v-4" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/><path d="M43 28l-8 12h9l-8 12" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">REMAX — EU Plug</div>
+        <div class="prod-name">Chargeur GaN 60W Set USB-C to C PD Quick Charge — Orange</div>
+        <div class="prod-foot">
+          <div><span class="prod-price">34.99&euro;</span><span class="prod-old">44.99&euro;</span></div>
+          <button class="add-btn" data-id="5">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">REMAX — EU Plug</div>
-    <div class="prod-name">Chargeur GaN 60W Set USB-C to C PD Quick Charge — Orange</div>
-    <div class="prod-foot">
-      <div><span class="prod-price">34.99&euro;</span><span class="prod-old">44.99&euro;</span></div>
-      <button class="add-btn" data-id="5">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="chargeurs" data-id="6">
-  <div class="prod-img" style="background:#0a0800">
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><rect x="28" y="8" width="24" height="10" rx="3" stroke="#C9A84C" stroke-width="2"/><rect x="28" y="62" width="24" height="10" rx="3" stroke="#C9A84C" stroke-width="2"/><path d="M40 18 C40 30 40 50 40 62" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/><line x1="33" y1="11" x2="33" y2="15" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="47" y1="11" x2="47" y2="15" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="prod" data-cat="chargeurs" data-id="6">
+      <div class="prod-img" style="background:#0a0800">
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><rect x="28" y="8" width="24" height="10" rx="3" stroke="#C9A84C" stroke-width="2"/><rect x="28" y="62" width="24" height="10" rx="3" stroke="#C9A84C" stroke-width="2"/><path d="M40 18 C40 30 40 50 40 62" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/><line x1="33" y1="11" x2="33" y2="15" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="47" y1="11" x2="47" y2="15" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">AMORUS — USB-C 60W</div>
+        <div class="prod-name">Cable USB-C to USB-C PD 3.0 60W Nylon Tresse 1m Fast Charge</div>
+        <div class="prod-foot">
+          <span class="prod-price">12.99&euro;</span>
+          <button class="add-btn" data-id="6">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">AMORUS — USB-C 60W</div>
-    <div class="prod-name">Cable USB-C to USB-C PD 3.0 60W Nylon Tresse 1m Fast Charge</div>
-    <div class="prod-foot">
-      <span class="prod-price">12.99&euro;</span>
-      <button class="add-btn" data-id="6">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="chargeurs" data-id="7">
-  <div class="prod-img" style="background:#060a00">
-    <div class="prod-badge b-new">New</div>
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><rect x="20" y="18" width="40" height="36" rx="6" stroke="#C9A84C" stroke-width="2.5"/><line x1="32" y1="36" x2="32" y2="44" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/><line x1="48" y1="36" x2="48" y2="44" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/><line x1="30" y1="8" x2="30" y2="18" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="8" x2="50" y2="18" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="prod" data-cat="chargeurs" data-id="7">
+      <div class="prod-img" style="background:#060a00">
+        <div class="prod-badge b-new">New</div>
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><rect x="20" y="18" width="40" height="36" rx="6" stroke="#C9A84C" stroke-width="2.5"/><line x1="32" y1="36" x2="32" y2="44" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/><line x1="48" y1="36" x2="48" y2="44" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/><line x1="30" y1="8" x2="30" y2="18" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="8" x2="50" y2="18" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">AMORUS — GaN 30W</div>
+        <div class="prod-name">Adaptateur GaN PD 30W USB-C + QC 18W USB-A EU Plug</div>
+        <div class="prod-foot">
+          <span class="prod-price">26.99&euro;</span>
+          <button class="add-btn" data-id="7">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">AMORUS — GaN 30W</div>
-    <div class="prod-name">Adaptateur GaN PD 30W USB-C + QC 18W USB-A EU Plug</div>
-    <div class="prod-foot">
-      <span class="prod-price">26.99&euro;</span>
-      <button class="add-btn" data-id="7">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="chargeurs" data-id="8">
-  <div class="prod-img" style="background:#080808">
-    <div class="prod-badge b-best">Best</div>
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="44" r="18" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="44" r="6" fill="#C9A84C" fill-opacity=".2" stroke="#C9A84C" stroke-width="2"/><path d="M26 30 Q40 18 54 30" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M20 24 Q40 8 60 24" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-opacity=".5"/></svg>
+    <div class="prod" data-cat="chargeurs" data-id="8">
+      <div class="prod-img" style="background:#080808">
+        <div class="prod-badge b-best">Best</div>
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="44" r="18" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="44" r="6" fill="#C9A84C" fill-opacity=".2" stroke="#C9A84C" stroke-width="2"/><path d="M26 30 Q40 18 54 30" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M20 24 Q40 8 60 24" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-opacity=".5"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">Q12 — Qi2 Universel</div>
+        <div class="prod-name">Chargeur Sans Fil 25W MagSafe Qi2 Magnetique — Noir</div>
+        <div class="prod-foot">
+          <span class="prod-price">22.99&euro;</span>
+          <button class="add-btn" data-id="8">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">Q12 — Qi2 Universel</div>
-    <div class="prod-name">Chargeur Sans Fil 25W MagSafe Qi2 Magnetique — Noir</div>
-    <div class="prod-foot">
-      <span class="prod-price">22.99&euro;</span>
-      <button class="add-btn" data-id="8">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="protection" data-id="9">
-  <div class="prod-img" style="background:#000f00">
-    <div class="prod-badge b-best">Best</div>
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><rect x="14" y="14" width="52" height="52" rx="6" stroke="#C9A84C" stroke-width="2.5"/><rect x="18" y="18" width="44" height="44" rx="4" fill="#C9A84C" fill-opacity=".06"/><line x1="24" y1="24" x2="32" y2="32" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".6"/><line x1="24" y1="30" x2="28" y2="34" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".4"/></svg>
+    <div class="prod" data-cat="protection" data-id="9">
+      <div class="prod-img" style="background:#000f00">
+        <div class="prod-badge b-best">Best</div>
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><rect x="14" y="14" width="52" height="52" rx="6" stroke="#C9A84C" stroke-width="2.5"/><rect x="18" y="18" width="44" height="44" rx="4" fill="#C9A84C" fill-opacity=".06"/><line x1="24" y1="24" x2="32" y2="32" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".6"/><line x1="24" y1="30" x2="28" y2="34" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".4"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">Samsung Galaxy S24</div>
+        <div class="prod-name">Verre Trempe Full Screen 9H Anti-Lumiere Bleue HD</div>
+        <div class="prod-foot">
+          <span class="prod-price">13.99&euro;</span>
+          <button class="add-btn" data-id="9">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">Samsung Galaxy S24</div>
-    <div class="prod-name">Verre Trempe Full Screen 9H Anti-Lumiere Bleue HD</div>
-    <div class="prod-foot">
-      <span class="prod-price">13.99&euro;</span>
-      <button class="add-btn" data-id="9">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="protection" data-id="10">
-  <div class="prod-img" style="background:#00060f">
-    <div class="prod-badge b-sale">Promo</div>
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><rect x="14" y="14" width="52" height="52" rx="6" stroke="#C9A84C" stroke-width="2.5"/><path d="M30 40 Q40 28 50 40 Q40 52 30 40Z" stroke="#C9A84C" stroke-width="2" fill="#C9A84C" fill-opacity=".1"/></svg>
+    <div class="prod" data-cat="protection" data-id="10">
+      <div class="prod-img" style="background:#00060f">
+        <div class="prod-badge b-sale">Promo</div>
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><rect x="14" y="14" width="52" height="52" rx="6" stroke="#C9A84C" stroke-width="2.5"/><path d="M30 40 Q40 28 50 40 Q40 52 30 40Z" stroke="#C9A84C" stroke-width="2" fill="#C9A84C" fill-opacity=".1"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">iPhone 16 / 16e</div>
+        <div class="prod-name">Film Hydrogel PET Full Coverage Transparent — Souple</div>
+        <div class="prod-foot">
+          <div><span class="prod-price">9.99&euro;</span><span class="prod-old">14.99&euro;</span></div>
+          <button class="add-btn" data-id="10">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">iPhone 16 / 16e</div>
-    <div class="prod-name">Film Hydrogel PET Full Coverage Transparent — Souple</div>
-    <div class="prod-foot">
-      <div><span class="prod-price">9.99&euro;</span><span class="prod-old">14.99&euro;</span></div>
-      <button class="add-btn" data-id="10">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="protection" data-id="11">
-  <div class="prod-img" style="background:#0a000a">
-    <div class="prod-badge b-new">New</div>
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><rect x="14" y="14" width="52" height="52" rx="6" stroke="#C9A84C" stroke-width="2.5"/><path d="M20 40 Q40 20 60 40 Q40 60 20 40Z" stroke="#C9A84C" stroke-width="2" fill="none"/><circle cx="40" cy="40" r="6" stroke="#C9A84C" stroke-width="2"/><line x1="16" y1="16" x2="64" y2="64" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-opacity=".5"/></svg>
+    <div class="prod" data-cat="protection" data-id="11">
+      <div class="prod-img" style="background:#0a000a">
+        <div class="prod-badge b-new">New</div>
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><rect x="14" y="14" width="52" height="52" rx="6" stroke="#C9A84C" stroke-width="2.5"/><path d="M20 40 Q40 20 60 40 Q40 60 20 40Z" stroke="#C9A84C" stroke-width="2" fill="none"/><circle cx="40" cy="40" r="6" stroke="#C9A84C" stroke-width="2"/><line x1="16" y1="16" x2="64" y2="64" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-opacity=".5"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">Oppo A6 5G</div>
+        <div class="prod-name">Verre Trempe Anti-Espion 180 Privacy Bord Noir</div>
+        <div class="prod-foot">
+          <span class="prod-price">14.99&euro;</span>
+          <button class="add-btn" data-id="11">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">Oppo A6 5G</div>
-    <div class="prod-name">Verre Trempe Anti-Espion 180 Privacy Bord Noir</div>
-    <div class="prod-foot">
-      <span class="prod-price">14.99&euro;</span>
-      <button class="add-btn" data-id="11">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="magsafe" data-id="12">
-  <div class="prod-img" style="background:#0f000a">
-    <div class="prod-badge b-best">Best</div>
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="32" r="16" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="32" r="6" stroke="#C9A84C" stroke-width="2"/><line x1="40" y1="48" x2="40" y2="62" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/><path d="M28 62 Q40 58 52 62" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <div class="prod" data-cat="magsafe" data-id="12">
+      <div class="prod-img" style="background:#0f000a">
+        <div class="prod-badge b-best">Best</div>
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="32" r="16" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="32" r="6" stroke="#C9A84C" stroke-width="2"/><line x1="40" y1="48" x2="40" y2="62" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/><path d="M28 62 Q40 58 52 62" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">MagSafe — Universel</div>
+        <div class="prod-name">Support Voiture Magnetique 360 Tableau de Bord Qi2</div>
+        <div class="prod-foot">
+          <span class="prod-price">24.99&euro;</span>
+          <button class="add-btn" data-id="12">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">MagSafe — Universel</div>
-    <div class="prod-name">Support Voiture Magnetique 360 Tableau de Bord Qi2</div>
-    <div class="prod-foot">
-      <span class="prod-price">24.99&euro;</span>
-      <button class="add-btn" data-id="12">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="magsafe" data-id="13">
-  <div class="prod-img" style="background:#000f08">
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><rect x="28" y="10" width="24" height="44" rx="5" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="62" r="6" stroke="#C9A84C" stroke-width="2"/><line x1="34" y1="22" x2="46" y2="22" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".5"/><line x1="34" y1="30" x2="46" y2="30" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".5"/></svg>
+    <div class="prod" data-cat="magsafe" data-id="13">
+      <div class="prod-img" style="background:#000f08">
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><rect x="28" y="10" width="24" height="44" rx="5" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="62" r="6" stroke="#C9A84C" stroke-width="2"/><line x1="34" y1="22" x2="46" y2="22" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".5"/><line x1="34" y1="30" x2="46" y2="30" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".5"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">TELESIN — MagSafe</div>
+        <div class="prod-name">Camera Grip Magnetique MFI Certifie Poignee Photo</div>
+        <div class="prod-foot">
+          <span class="prod-price">32.99&euro;</span>
+          <button class="add-btn" data-id="13">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">TELESIN — MagSafe</div>
-    <div class="prod-name">Camera Grip Magnetique MFI Certifie Poignee Photo</div>
-    <div class="prod-foot">
-      <span class="prod-price">32.99&euro;</span>
-      <button class="add-btn" data-id="13">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="camera" data-id="14">
-  <div class="prod-img" style="background:#0f0f00">
-    <div class="prod-badge b-new">New</div>
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><rect x="18" y="8" width="44" height="64" rx="7" stroke="#C9A84C" stroke-width="2" stroke-opacity=".4"/><circle cx="40" cy="26" r="10" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="26" r="4" fill="#C9A84C" fill-opacity=".15"/><circle cx="52" cy="26" r="8" stroke="#C9A84C" stroke-width="2.5"/></svg>
+    <div class="prod" data-cat="camera" data-id="14">
+      <div class="prod-img" style="background:#0f0f00">
+        <div class="prod-badge b-new">New</div>
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><rect x="18" y="8" width="44" height="64" rx="7" stroke="#C9A84C" stroke-width="2" stroke-opacity=".4"/><circle cx="40" cy="26" r="10" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="26" r="4" fill="#C9A84C" fill-opacity=".15"/><circle cx="52" cy="26" r="8" stroke="#C9A84C" stroke-width="2.5"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">iPhone 15 Pro Max</div>
+        <div class="prod-name">Bague Protection Camera Titane Brosse Premium Anti-Rayures</div>
+        <div class="prod-foot">
+          <span class="prod-price">15.99&euro;</span>
+          <button class="add-btn" data-id="14">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">iPhone 15 Pro Max</div>
-    <div class="prod-name">Bague Protection Camera Titane Brosse Premium Anti-Rayures</div>
-    <div class="prod-foot">
-      <span class="prod-price">15.99&euro;</span>
-      <button class="add-btn" data-id="14">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="camera" data-id="15">
-  <div class="prod-img" style="background:#000f0f">
-    <div class="prod-badge b-best">Best</div>
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="24" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="40" r="16" stroke="#C9A84C" stroke-width="2" stroke-opacity=".6"/><circle cx="40" cy="40" r="8" fill="#C9A84C" fill-opacity=".1" stroke="#C9A84C" stroke-width="2"/><line x1="40" y1="16" x2="40" y2="20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="60" x2="40" y2="64" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="40" x2="20" y2="40" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="60" y1="40" x2="64" y2="40" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="prod" data-cat="camera" data-id="15">
+      <div class="prod-img" style="background:#000f0f">
+        <div class="prod-badge b-best">Best</div>
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="24" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="40" r="16" stroke="#C9A84C" stroke-width="2" stroke-opacity=".6"/><circle cx="40" cy="40" r="8" fill="#C9A84C" fill-opacity=".1" stroke="#C9A84C" stroke-width="2"/><line x1="40" y1="16" x2="40" y2="20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="60" x2="40" y2="64" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="40" x2="20" y2="40" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="60" y1="40" x2="64" y2="40" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">iPhone 16 Pro / Pro Max</div>
+        <div class="prod-name">Protection Objectif Verre 9H Contour Alliage Aluminium</div>
+        <div class="prod-foot">
+          <span class="prod-price">12.99&euro;</span>
+          <button class="add-btn" data-id="15">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">iPhone 16 Pro / Pro Max</div>
-    <div class="prod-name">Protection Objectif Verre 9H Contour Alliage Aluminium</div>
-    <div class="prod-foot">
-      <span class="prod-price">12.99&euro;</span>
-      <button class="add-btn" data-id="15">&#128722;</button>
-    </div>
-  </div>
-</div>
 
-<div class="prod" data-cat="camera" data-id="16">
-  <div class="prod-img" style="background:#08000f">
-    <div class="prod-icon-wrap">
-      <svg viewBox="0 0 80 80" fill="none"><rect x="12" y="22" width="56" height="36" rx="6" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="40" r="10" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="40" r="4" fill="#C9A84C" fill-opacity=".2"/><rect x="30" y="16" width="8" height="6" rx="2" stroke="#C9A84C" stroke-width="1.5"/></svg>
+    <div class="prod" data-cat="camera" data-id="16">
+      <div class="prod-img" style="background:#08000f">
+        <div class="prod-icon-wrap">
+          <svg viewBox="0 0 80 80" fill="none"><rect x="12" y="22" width="56" height="36" rx="6" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="40" r="10" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="40" r="4" fill="#C9A84C" fill-opacity=".2"/><rect x="30" y="16" width="8" height="6" rx="2" stroke="#C9A84C" stroke-width="1.5"/></svg>
+        </div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-brand">Samsung S24 Ultra</div>
+        <div class="prod-name">Film Protection Camera Arriere HD Clear Anti-Scratch</div>
+        <div class="prod-foot">
+          <span class="prod-price">10.99&euro;</span>
+          <button class="add-btn" data-id="16">&#128722;</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="prod-info">
-    <div class="prod-brand">Samsung S24 Ultra</div>
-    <div class="prod-name">Film Protection Camera Arriere HD Clear Anti-Scratch</div>
-    <div class="prod-foot">
-      <span class="prod-price">10.99&euro;</span>
-      <button class="add-btn" data-id="16">&#128722;</button>
-    </div>
-  </div>
-</div>
-```
 
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
-
 <div class="how" id="how">
   <h2 class="how-title">Comment fonctionne la boutique</h2>
   <div class="how-grid">
@@ -653,7 +642,6 @@ nav { padding:16px 20px; }
 </div>
 
 <!-- BANNER -->
-
 <div class="banner">
   <div>
     <div class="banner-eyebrow">Pourquoi nous choisir</div>
@@ -669,7 +657,6 @@ nav { padding:16px 20px; }
 </div>
 
 <!-- FEATURES -->
-
 <div class="feats">
   <div class="feat"><div class="feat-icon">🚀</div><div class="feat-title">Livraison Express</div><div class="feat-desc">Expédition sous 24h, livraison en 48-72h partout en France et en Europe.</div></div>
   <div class="feat"><div class="feat-icon">🔒</div><div class="feat-title">Paiement Sécurisé</div><div class="feat-desc">Transactions 100% sécurisées. Carte, PayPal, Apple Pay et Google Pay acceptés.</div></div>
@@ -678,7 +665,6 @@ nav { padding:16px 20px; }
 </div>
 
 <!-- FOOTER -->
-
 <footer id="footer">
   <div class="ft-top">
     <div>
@@ -721,7 +707,6 @@ nav { padding:16px 20px; }
 </footer>
 
 <!-- PRODUCT MODAL -->
-
 <div class="prod-modal" id="prodModal">
   <div class="prod-modal-overlay" onclick="closeProduct()"></div>
   <div class="prod-modal-panel">
@@ -745,86 +730,85 @@ var NAMES  = {1:'Coque MagSafe TORRAS',2:'Coque Leather ESEBLE',3:'Coque Cloth i
 var cart = {};
 
 // ── CATEGORY FILTER ──
-document.querySelectorAll(’.cf-btn’).forEach(function(btn) {
-btn.addEventListener(‘click’, function() {
-var cat = this.dataset.cat;
-document.querySelectorAll(’.cf-btn’).forEach(function(b){ b.classList.remove(‘cf-active’); });
-this.classList.add(‘cf-active’);
-document.querySelectorAll(’.prod’).forEach(function(p){
-p.style.display = (cat === ‘all’ || p.dataset.cat === cat) ? ‘’ : ‘none’;
-});
-});
+document.querySelectorAll('.cf-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var cat = this.dataset.cat;
+    document.querySelectorAll('.cf-btn').forEach(function(b){ b.classList.remove('cf-active'); });
+    this.classList.add('cf-active');
+    document.querySelectorAll('.prod').forEach(function(p){
+      p.style.display = (cat === 'all' || p.dataset.cat === cat) ? '' : 'none';
+    });
+  });
 });
 
 // ── CATEGORY CARDS → scroll to products ──
-document.querySelectorAll(’.cat’).forEach(function(el) {
-el.addEventListener(‘click’, function() {
-var cat = this.className.replace(/.*cat-([a-z]+).*/, ‘$1’);
-var validCats = [‘coques’,‘chargeurs’,‘protection’,‘magsafe’,‘camera’];
-if (validCats.indexOf(cat) >= 0) {
-document.querySelectorAll(’.cf-btn’).forEach(function(b){ b.classList.remove(‘cf-active’); });
-var btn = document.querySelector(’.cf-btn[data-cat=”’+cat+’”]’);
-if (btn) btn.classList.add(‘cf-active’);
-document.querySelectorAll(’.prod’).forEach(function(p){
-p.style.display = (p.dataset.cat === cat) ? ‘’ : ‘none’;
-});
-}
-setTimeout(function(){ document.getElementById(‘prods’).scrollIntoView({behavior:‘smooth’}); }, 50);
-});
+document.querySelectorAll('.cat').forEach(function(el) {
+  el.addEventListener('click', function() {
+    var cat = this.className.replace(/.*cat-([a-z]+).*/, '$1');
+    var validCats = ['coques','chargeurs','protection','magsafe','camera'];
+    if (validCats.indexOf(cat) >= 0) {
+      document.querySelectorAll('.cf-btn').forEach(function(b){ b.classList.remove('cf-active'); });
+      var btn = document.querySelector('.cf-btn[data-cat="'+cat+'"]');
+      if (btn) btn.classList.add('cf-active');
+      document.querySelectorAll('.prod').forEach(function(p){
+        p.style.display = (p.dataset.cat === cat) ? '' : 'none';
+      });
+    }
+    setTimeout(function(){ document.getElementById('prods').scrollIntoView({behavior:'smooth'}); }, 50);
+  });
 });
 
 // ── ADD TO CART ──
-document.querySelectorAll(’.add-btn’).forEach(function(btn) {
-btn.addEventListener(‘click’, function(e) {
-e.stopPropagation();
-var id = parseInt(this.dataset.id);
-cart[id] = (cart[id] || 0) + 1;
-updateCart();
-showToast();
-});
+document.querySelectorAll('.add-btn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var id = parseInt(this.dataset.id);
+    cart[id] = (cart[id] || 0) + 1;
+    updateCart();
+    showToast();
+  });
 });
 
 function updateCart() {
-var total = 0, count = 0;
-Object.keys(cart).forEach(function(id) { count += cart[id]; total += PRICES[id] * cart[id]; });
-document.getElementById(‘cartN’).textContent = count;
-document.getElementById(‘cartAmt’).textContent = total.toFixed(2) + ‘\u20ac’;
-var body = document.getElementById(‘cartBody’);
-var ft = document.getElementById(‘cartFt’);
-if (count === 0) {
-body.innerHTML = ‘<div class="c-empty"><div class="c-empty-icon">\uD83D\uDECD\uFE0F</div>Votre panier est vide</div>’;
-ft.style.display = ‘none’;
-} else {
-ft.style.display = ‘block’;
-var html = ‘’;
-Object.keys(cart).forEach(function(id) {
-if (cart[id] > 0) {
-html += ‘<div class="c-item"><div class="c-thumb" style="background:#1a1200;color:#C9A84C;font-size:20px;display:flex;align-items:center;justify-content:center;width:52px;height:52px;flex-shrink:0">🛒</div><div style="flex:1"><div class="c-name">’+NAMES[id]+’</div><div class="c-price">’+(PRICES[id]*cart[id]).toFixed(2)+’\u20ac</div><div class="c-qty"><button class="q-btn" data-id="'+id+'" data-d="-1">\u2212</button><span class="q-n">’+cart[id]+’</span><button class="q-btn" data-id="'+id+'" data-d="1">+</button></div></div></div>’;
-}
-});
-body.innerHTML = html;
-body.querySelectorAll(’.q-btn’).forEach(function(b) {
-b.addEventListener(‘click’, function() {
-var id = this.dataset.id, d = parseInt(this.dataset.d);
-cart[id] = (cart[id] || 0) + d;
-if (cart[id] <= 0) delete cart[id];
-updateCart();
-});
-});
-}
+  var total = 0, count = 0;
+  Object.keys(cart).forEach(function(id) { count += cart[id]; total += PRICES[id] * cart[id]; });
+  document.getElementById('cartN').textContent = count;
+  document.getElementById('cartAmt').textContent = total.toFixed(2) + '\u20ac';
+  var body = document.getElementById('cartBody');
+  var ft = document.getElementById('cartFt');
+  if (count === 0) {
+    body.innerHTML = '<div class="c-empty"><div class="c-empty-icon">\uD83D\uDECD\uFE0F</div>Votre panier est vide</div>';
+    ft.style.display = 'none';
+  } else {
+    ft.style.display = 'block';
+    var html = '';
+    Object.keys(cart).forEach(function(id) {
+      if (cart[id] > 0) {
+        html += '<div class="c-item"><div class="c-thumb" style="background:#1a1200;color:#C9A84C;font-size:20px;display:flex;align-items:center;justify-content:center;width:52px;height:52px;flex-shrink:0">&#128722;</div><div style="flex:1"><div class="c-name">'+NAMES[id]+'</div><div class="c-price">'+(PRICES[id]*cart[id]).toFixed(2)+'\u20ac</div><div class="c-qty"><button class="q-btn" data-id="'+id+'" data-d="-1">\u2212</button><span class="q-n">'+cart[id]+'</span><button class="q-btn" data-id="'+id+'" data-d="1">+</button></div></div></div>';
+      }
+    });
+    body.innerHTML = html;
+    body.querySelectorAll('.q-btn').forEach(function(b) {
+      b.addEventListener('click', function() {
+        var id = this.dataset.id, d = parseInt(this.dataset.d);
+        cart[id] = (cart[id] || 0) + d;
+        if (cart[id] <= 0) delete cart[id];
+        updateCart();
+      });
+    });
+  }
 }
 
-function openCart(){ document.getElementById(‘cartOverlay’).classList.add(‘open’); document.getElementById(‘cartPanel’).classList.add(‘open’); }
-function closeCart(){ document.getElementById(‘cartOverlay’).classList.remove(‘open’); document.getElementById(‘cartPanel’).classList.remove(‘open’); }
-function checkout(){ alert(‘Integrez Stripe ou PayPal pour activer le paiement.’); }
-function showToast(){ var t=document.getElementById(‘toast’); t.classList.add(‘show’); setTimeout(function(){ t.classList.remove(‘show’); }, 2400); }
+function openCart(){ document.getElementById('cartOverlay').classList.add('open'); document.getElementById('cartPanel').classList.add('open'); }
+function closeCart(){ document.getElementById('cartOverlay').classList.remove('open'); document.getElementById('cartPanel').classList.remove('open'); }
+function checkout(){ alert('Integrez Stripe ou PayPal pour activer le paiement.'); }
+function showToast(){ var t=document.getElementById('toast'); t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); }, 2400); }
 
 // ── CURSOR (desktop only) ──
-var cur=document.getElementById(‘cur’), ring=document.getElementById(‘cur-ring’);
+var cur=document.getElementById('cur'), ring=document.getElementById('cur-ring');
 var mx=0,my=0,rx=0,ry=0;
-document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.clientY; cur.style.left=mx+‘px’; cur.style.top=my+‘px’; });
-(function anim(){ rx+=(mx-rx)*.11; ry+=(my-ry)*.11; ring.style.left=rx+‘px’; ring.style.top=ry+‘px’; requestAnimationFrame(anim); })();
+document.addEventListener('mousemove',function(e){ mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
+(function anim(){ rx+=(mx-rx)*.11; ry+=(my-ry)*.11; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(anim); })();
 </script>
-
 </body>
 </html>
