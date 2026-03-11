@@ -125,9 +125,9 @@
   .add-btn:hover { background:var(--gold); border-color:var(--gold); color:#000; }
   .add-btn svg { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 
-  .cat-filters { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
-  .cf-btn { border:1px solid var(--border); background:transparent; color:var(--muted); padding:7px 16px; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; cursor:pointer; transition:all .2s; }
-  .cf-btn:hover, .cf-btn.cf-active { border-color:var(--gold); color:var(--gold); background:rgba(201,168,76,.08); }
+  .cat-filters { display:flex; gap:10px; flex-wrap:wrap; }
+  .cf-btn { border:1px solid var(--border); background:transparent; color:var(--muted); padding:9px 22px; font-size:10px; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:all .25s; border-radius:2px; }
+  .cf-btn:hover, .cf-btn.cf-active { border-color:var(--gold); color:var(--gold); background:rgba(201,168,76,.07); }
   .prod-modal { position:fixed; inset:0; z-index:500; display:flex; align-items:flex-end; pointer-events:none; }
   .prod-modal.open { pointer-events:all; }
   .prod-modal-overlay { position:absolute; inset:0; background:rgba(0,0,0,.8); opacity:0; transition:opacity .35s; backdrop-filter:blur(4px); }
@@ -342,18 +342,16 @@
 
 <!-- PRODUCTS -->
 <section class="sec" id="prods" style="padding-top:0">
-  <div class="sec-head">
-    <div>
-      <div class="sec-eyebrow">Bestsellers</div>
-      <h2 class="sec-title">Produits phares</h2>
-    </div>
-    <div class="cat-filters">
+  <div style="padding:60px 52px 32px; text-align:center; border-bottom:1px solid var(--border);">
+    <div class="sec-eyebrow" style="margin-bottom:12px;">Bestsellers</div>
+    <h2 class="sec-title" style="margin-bottom:32px;">Produits phares</h2>
+    <div class="cat-filters" style="justify-content:center;">
       <button class="cf-btn cf-active" data-cat="all">Tous</button>
       <button class="cf-btn" data-cat="coques">Coques</button>
       <button class="cf-btn" data-cat="chargeurs">Chargeurs</button>
       <button class="cf-btn" data-cat="protection">Protection</button>
       <button class="cf-btn" data-cat="magsafe">MagSafe</button>
-      <button class="cf-btn" data-cat="camera">Camera</button>
+      <button class="cf-btn" data-cat="camera">Caméra</button>
     </div>
   </div>
   <div class="prods-grid" id="prodsGrid">
