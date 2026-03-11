@@ -126,7 +126,9 @@ h1.hero-title em { font-style:italic; color:var(–white); }
 .add-btn:hover { background:var(–gold); border-color:var(–gold); color:#000; }
 .add-btn svg { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 
-/* PRODUCT MODAL */
+.cat-filters { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+.cf-btn { border:1px solid var(–border); background:transparent; color:var(–muted); padding:7px 16px; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; cursor:pointer; transition:all .2s; }
+.cf-btn:hover, .cf-btn.cf-active { border-color:var(–gold); color:var(–gold); background:rgba(201,168,76,.08); }
 .prod-modal { position:fixed; inset:0; z-index:500; display:flex; align-items:flex-end; pointer-events:none; }
 .prod-modal.open { pointer-events:all; }
 .prod-modal-overlay { position:absolute; inset:0; background:rgba(0,0,0,.8); opacity:0; transition:opacity .35s; backdrop-filter:blur(4px); }
@@ -353,9 +355,289 @@ nav { padding:16px 20px; }
       <div class="sec-eyebrow">Bestsellers</div>
       <h2 class="sec-title">Produits phares</h2>
     </div>
-    <a href="#" class="see-all">Voir tout →</a>
+    <div class="cat-filters">
+      <button class="cf-btn cf-active" data-cat="all">Tous</button>
+      <button class="cf-btn" data-cat="coques">Coques</button>
+      <button class="cf-btn" data-cat="chargeurs">Chargeurs</button>
+      <button class="cf-btn" data-cat="protection">Protection</button>
+      <button class="cf-btn" data-cat="magsafe">MagSafe</button>
+      <button class="cf-btn" data-cat="camera">Camera</button>
+    </div>
   </div>
-  <div class="prods-grid" id="prodsGrid"></div>
+  <div class="prods-grid" id="prodsGrid">
+
+```
+<div class="prod" data-cat="coques" data-id="1">
+  <div class="prod-img" style="background:#0f0a00">
+    <div class="prod-badge b-best">Best</div>
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="18" y="8" width="44" height="64" rx="7" stroke="#C9A84C" stroke-width="2.5"/><rect x="22" y="14" width="36" height="46" rx="3" fill="#C9A84C" fill-opacity=".07"/><circle cx="40" cy="67" r="2.5" stroke="#C9A84C" stroke-width="2"/><line x1="34" y1="11" x2="46" y2="11" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">TORRAS — iPhone 16</div>
+    <div class="prod-name">Ostand Q3 Spin Coque MagSafe Kickstand Rotatif PC+TPU</div>
+    <div class="prod-foot">
+      <span class="prod-price">24.99&euro;</span>
+      <button class="add-btn" data-id="1">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="coques" data-id="2">
+  <div class="prod-img" style="background:#00080f">
+    <div class="prod-badge b-sale">Promo</div>
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="12" y="20" width="56" height="40" rx="5" stroke="#C9A84C" stroke-width="2.5"/><rect x="12" y="28" width="56" height="12" fill="#C9A84C" fill-opacity=".1"/><rect x="48" y="31" width="14" height="7" rx="3.5" stroke="#C9A84C" stroke-width="2"/><line x1="20" y1="50" x2="36" y2="50" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">ESEBLE — iPhone 17 Pro</div>
+    <div class="prod-name">Coque Vintage PU Leather avec Porte-Carte — Bleu</div>
+    <div class="prod-foot">
+      <div><span class="prod-price">21.99&euro;</span><span class="prod-old">29.99&euro;</span></div>
+      <button class="add-btn" data-id="2">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="coques" data-id="3">
+  <div class="prod-img" style="background:#080808">
+    <div class="prod-badge b-new">New</div>
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="18" y="8" width="44" height="64" rx="7" stroke="#C9A84C" stroke-width="2.5"/><line x1="22" y1="22" x2="58" y2="22" stroke="#C9A84C" stroke-width="1" stroke-opacity=".4"/><line x1="22" y1="30" x2="58" y2="30" stroke="#C9A84C" stroke-width="1" stroke-opacity=".4"/><line x1="22" y1="38" x2="58" y2="38" stroke="#C9A84C" stroke-width="1" stroke-opacity=".4"/><line x1="22" y1="46" x2="58" y2="46" stroke="#C9A84C" stroke-width="1" stroke-opacity=".4"/><circle cx="40" cy="67" r="2.5" stroke="#C9A84C" stroke-width="2"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">iPhone 17 Pro</div>
+    <div class="prod-name">Coque Cloth Texture TPU Leather Porte-Carte &amp; Kickstand</div>
+    <div class="prod-foot">
+      <span class="prod-price">19.99&euro;</span>
+      <button class="add-btn" data-id="3">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="coques" data-id="4">
+  <div class="prod-img" style="background:#06060f">
+    <div class="prod-badge b-best">Best</div>
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="10" y="22" width="60" height="36" rx="5" stroke="#C9A84C" stroke-width="2.5"/><rect x="10" y="30" width="60" height="10" fill="#C9A84C" fill-opacity=".15"/><circle cx="56" cy="48" r="5" stroke="#C9A84C" stroke-width="2"/><circle cx="62" cy="48" r="5" stroke="#C9A84C" stroke-width="2" fill="#C9A84C" fill-opacity=".1"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">DUX DUCIS — Samsung S24</div>
+    <div class="prod-name">Coque Portefeuille Cuir Magnetique 3 Cartes — Noir</div>
+    <div class="prod-foot">
+      <span class="prod-price">28.99&euro;</span>
+      <button class="add-btn" data-id="4">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="chargeurs" data-id="5">
+  <div class="prod-img" style="background:#0f0500">
+    <div class="prod-badge b-sale">Promo</div>
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="24" y="14" width="32" height="40" rx="5" stroke="#C9A84C" stroke-width="2.5"/><path d="M36 54v4a4 4 0 008 0v-4" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/><path d="M43 28l-8 12h9l-8 12" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">REMAX — EU Plug</div>
+    <div class="prod-name">Chargeur GaN 60W Set USB-C to C PD Quick Charge — Orange</div>
+    <div class="prod-foot">
+      <div><span class="prod-price">34.99&euro;</span><span class="prod-old">44.99&euro;</span></div>
+      <button class="add-btn" data-id="5">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="chargeurs" data-id="6">
+  <div class="prod-img" style="background:#0a0800">
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="28" y="8" width="24" height="10" rx="3" stroke="#C9A84C" stroke-width="2"/><rect x="28" y="62" width="24" height="10" rx="3" stroke="#C9A84C" stroke-width="2"/><path d="M40 18 C40 30 40 50 40 62" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/><line x1="33" y1="11" x2="33" y2="15" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="47" y1="11" x2="47" y2="15" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">AMORUS — USB-C 60W</div>
+    <div class="prod-name">Cable USB-C to USB-C PD 3.0 60W Nylon Tresse 1m Fast Charge</div>
+    <div class="prod-foot">
+      <span class="prod-price">12.99&euro;</span>
+      <button class="add-btn" data-id="6">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="chargeurs" data-id="7">
+  <div class="prod-img" style="background:#060a00">
+    <div class="prod-badge b-new">New</div>
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="20" y="18" width="40" height="36" rx="6" stroke="#C9A84C" stroke-width="2.5"/><line x1="32" y1="36" x2="32" y2="44" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/><line x1="48" y1="36" x2="48" y2="44" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/><line x1="30" y1="8" x2="30" y2="18" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="8" x2="50" y2="18" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">AMORUS — GaN 30W</div>
+    <div class="prod-name">Adaptateur GaN PD 30W USB-C + QC 18W USB-A EU Plug</div>
+    <div class="prod-foot">
+      <span class="prod-price">26.99&euro;</span>
+      <button class="add-btn" data-id="7">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="chargeurs" data-id="8">
+  <div class="prod-img" style="background:#080808">
+    <div class="prod-badge b-best">Best</div>
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="44" r="18" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="44" r="6" fill="#C9A84C" fill-opacity=".2" stroke="#C9A84C" stroke-width="2"/><path d="M26 30 Q40 18 54 30" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M20 24 Q40 8 60 24" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-opacity=".5"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">Q12 — Qi2 Universel</div>
+    <div class="prod-name">Chargeur Sans Fil 25W MagSafe Qi2 Magnetique — Noir</div>
+    <div class="prod-foot">
+      <span class="prod-price">22.99&euro;</span>
+      <button class="add-btn" data-id="8">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="protection" data-id="9">
+  <div class="prod-img" style="background:#000f00">
+    <div class="prod-badge b-best">Best</div>
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="14" y="14" width="52" height="52" rx="6" stroke="#C9A84C" stroke-width="2.5"/><rect x="18" y="18" width="44" height="44" rx="4" fill="#C9A84C" fill-opacity=".06"/><line x1="24" y1="24" x2="32" y2="32" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".6"/><line x1="24" y1="30" x2="28" y2="34" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".4"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">Samsung Galaxy S24</div>
+    <div class="prod-name">Verre Trempe Full Screen 9H Anti-Lumiere Bleue HD</div>
+    <div class="prod-foot">
+      <span class="prod-price">13.99&euro;</span>
+      <button class="add-btn" data-id="9">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="protection" data-id="10">
+  <div class="prod-img" style="background:#00060f">
+    <div class="prod-badge b-sale">Promo</div>
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="14" y="14" width="52" height="52" rx="6" stroke="#C9A84C" stroke-width="2.5"/><path d="M30 40 Q40 28 50 40 Q40 52 30 40Z" stroke="#C9A84C" stroke-width="2" fill="#C9A84C" fill-opacity=".1"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">iPhone 16 / 16e</div>
+    <div class="prod-name">Film Hydrogel PET Full Coverage Transparent — Souple</div>
+    <div class="prod-foot">
+      <div><span class="prod-price">9.99&euro;</span><span class="prod-old">14.99&euro;</span></div>
+      <button class="add-btn" data-id="10">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="protection" data-id="11">
+  <div class="prod-img" style="background:#0a000a">
+    <div class="prod-badge b-new">New</div>
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="14" y="14" width="52" height="52" rx="6" stroke="#C9A84C" stroke-width="2.5"/><path d="M20 40 Q40 20 60 40 Q40 60 20 40Z" stroke="#C9A84C" stroke-width="2" fill="none"/><circle cx="40" cy="40" r="6" stroke="#C9A84C" stroke-width="2"/><line x1="16" y1="16" x2="64" y2="64" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-opacity=".5"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">Oppo A6 5G</div>
+    <div class="prod-name">Verre Trempe Anti-Espion 180 Privacy Bord Noir</div>
+    <div class="prod-foot">
+      <span class="prod-price">14.99&euro;</span>
+      <button class="add-btn" data-id="11">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="magsafe" data-id="12">
+  <div class="prod-img" style="background:#0f000a">
+    <div class="prod-badge b-best">Best</div>
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="32" r="16" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="32" r="6" stroke="#C9A84C" stroke-width="2"/><line x1="40" y1="48" x2="40" y2="62" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/><path d="M28 62 Q40 58 52 62" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">MagSafe — Universel</div>
+    <div class="prod-name">Support Voiture Magnetique 360 Tableau de Bord Qi2</div>
+    <div class="prod-foot">
+      <span class="prod-price">24.99&euro;</span>
+      <button class="add-btn" data-id="12">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="magsafe" data-id="13">
+  <div class="prod-img" style="background:#000f08">
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="28" y="10" width="24" height="44" rx="5" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="62" r="6" stroke="#C9A84C" stroke-width="2"/><line x1="34" y1="22" x2="46" y2="22" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".5"/><line x1="34" y1="30" x2="46" y2="30" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".5"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">TELESIN — MagSafe</div>
+    <div class="prod-name">Camera Grip Magnetique MFI Certifie Poignee Photo</div>
+    <div class="prod-foot">
+      <span class="prod-price">32.99&euro;</span>
+      <button class="add-btn" data-id="13">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="camera" data-id="14">
+  <div class="prod-img" style="background:#0f0f00">
+    <div class="prod-badge b-new">New</div>
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="18" y="8" width="44" height="64" rx="7" stroke="#C9A84C" stroke-width="2" stroke-opacity=".4"/><circle cx="40" cy="26" r="10" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="26" r="4" fill="#C9A84C" fill-opacity=".15"/><circle cx="52" cy="26" r="8" stroke="#C9A84C" stroke-width="2.5"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">iPhone 15 Pro Max</div>
+    <div class="prod-name">Bague Protection Camera Titane Brosse Premium Anti-Rayures</div>
+    <div class="prod-foot">
+      <span class="prod-price">15.99&euro;</span>
+      <button class="add-btn" data-id="14">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="camera" data-id="15">
+  <div class="prod-img" style="background:#000f0f">
+    <div class="prod-badge b-best">Best</div>
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="24" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="40" r="16" stroke="#C9A84C" stroke-width="2" stroke-opacity=".6"/><circle cx="40" cy="40" r="8" fill="#C9A84C" fill-opacity=".1" stroke="#C9A84C" stroke-width="2"/><line x1="40" y1="16" x2="40" y2="20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="60" x2="40" y2="64" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="40" x2="20" y2="40" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="60" y1="40" x2="64" y2="40" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">iPhone 16 Pro / Pro Max</div>
+    <div class="prod-name">Protection Objectif Verre 9H Contour Alliage Aluminium</div>
+    <div class="prod-foot">
+      <span class="prod-price">12.99&euro;</span>
+      <button class="add-btn" data-id="15">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="camera" data-id="16">
+  <div class="prod-img" style="background:#08000f">
+    <div class="prod-icon-wrap">
+      <svg viewBox="0 0 80 80" fill="none"><rect x="12" y="22" width="56" height="36" rx="6" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="40" r="10" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="40" r="4" fill="#C9A84C" fill-opacity=".2"/><rect x="30" y="16" width="8" height="6" rx="2" stroke="#C9A84C" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">Samsung S24 Ultra</div>
+    <div class="prod-name">Film Protection Camera Arriere HD Clear Anti-Scratch</div>
+    <div class="prod-foot">
+      <span class="prod-price">10.99&euro;</span>
+      <button class="add-btn" data-id="16">&#128722;</button>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
 </section>
 
 <!-- HOW IT WORKS -->
@@ -457,149 +739,91 @@ nav { padding:16px 20px; }
   </div>
 </div>
 <script>
-const SVG = {
-  phone: `<svg viewBox="0 0 80 80" fill="none" ><rect x="18" y="8" width="44" height="64" rx="7" stroke="#C9A84C" stroke-width="2.5"/><rect x="22" y="14" width="36" height="46" rx="3" fill="#C9A84C" fill-opacity=".07"/><circle cx="40" cy="67" r="2.5" stroke="#C9A84C" stroke-width="2"/><line x1="34" y1="11" x2="46" y2="11" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>`,
-  wallet: `<svg viewBox="0 0 80 80" fill="none" ><rect x="12" y="20" width="56" height="40" rx="5" stroke="#C9A84C" stroke-width="2.5"/><rect x="12" y="28" width="56" height="12" fill="#C9A84C" fill-opacity=".1"/><rect x="48" y="31" width="14" height="7" rx="3.5" stroke="#C9A84C" stroke-width="2"/><line x1="20" y1="50" x2="36" y2="50" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="55" x2="30" y2="55" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg>`,
-  cloth: `<svg viewBox="0 0 80 80" fill="none" ><rect x="18" y="8" width="44" height="64" rx="7" stroke="#C9A84C" stroke-width="2.5"/><rect x="22" y="14" width="36" height="46" rx="3" fill="#C9A84C" fill-opacity=".07"/><line x1="22" y1="20" x2="58" y2="20" stroke="#C9A84C" stroke-width="1" stroke-opacity=".3"/><line x1="22" y1="26" x2="58" y2="26" stroke="#C9A84C" stroke-width="1" stroke-opacity=".3"/><line x1="22" y1="32" x2="58" y2="32" stroke="#C9A84C" stroke-width="1" stroke-opacity=".3"/><line x1="22" y1="38" x2="58" y2="38" stroke="#C9A84C" stroke-width="1" stroke-opacity=".3"/><line x1="22" y1="44" x2="58" y2="44" stroke="#C9A84C" stroke-width="1" stroke-opacity=".3"/><line x1="22" y1="50" x2="58" y2="50" stroke="#C9A84C" stroke-width="1" stroke-opacity=".3"/><circle cx="40" cy="67" r="2.5" stroke="#C9A84C" stroke-width="2"/></svg>`,
-  card: `<svg viewBox="0 0 80 80" fill="none" ><rect x="10" y="22" width="60" height="36" rx="5" stroke="#C9A84C" stroke-width="2.5"/><rect x="10" y="30" width="60" height="10" fill="#C9A84C" fill-opacity=".15"/><rect x="18" y="46" width="20" height="5" rx="2.5" stroke="#C9A84C" stroke-width="1.5"/><circle cx="56" cy="48" r="5" stroke="#C9A84C" stroke-width="2"/><circle cx="62" cy="48" r="5" stroke="#C9A84C" stroke-width="2" fill="#C9A84C" fill-opacity=".1"/></svg>`,
-  charger: `<svg viewBox="0 0 80 80" fill="none" ><rect x="24" y="14" width="32" height="40" rx="5" stroke="#C9A84C" stroke-width="2.5"/><path d="M36 54v4a4 4 0 008 0v-4" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/><path d="M43 28l-8 12h9l-8 12" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  cable: `<svg viewBox="0 0 80 80" fill="none" ><rect x="28" y="8" width="24" height="10" rx="3" stroke="#C9A84C" stroke-width="2"/><rect x="28" y="62" width="24" height="10" rx="3" stroke="#C9A84C" stroke-width="2"/><path d="M40 18 C40 18 40 35 40 40 C40 45 40 62 40 62" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/><line x1="33" y1="11" x2="33" y2="15" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="47" y1="11" x2="47" y2="15" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>`,
-  adapter: `<svg viewBox="0 0 80 80" fill="none" ><rect x="20" y="18" width="40" height="36" rx="6" stroke="#C9A84C" stroke-width="2.5"/><line x1="32" y1="36" x2="32" y2="44" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/><line x1="48" y1="36" x2="48" y2="44" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/><line x1="30" y1="8" x2="30" y2="18" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="8" x2="50" y2="18" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>`,
-  wireless: `<svg viewBox="0 0 80 80" fill="none" ><circle cx="40" cy="44" r="18" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="44" r="6" fill="#C9A84C" fill-opacity=".2" stroke="#C9A84C" stroke-width="2"/><path d="M26 30 Q40 18 54 30" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M20 24 Q40 8 60 24" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-opacity=".5"/></svg>`,
-  glass: `<svg viewBox="0 0 80 80" fill="none" ><rect x="14" y="14" width="52" height="52" rx="6" stroke="#C9A84C" stroke-width="2.5"/><rect x="18" y="18" width="44" height="44" rx="4" fill="#C9A84C" fill-opacity=".06"/><line x1="24" y1="24" x2="32" y2="32" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".6"/><line x1="24" y1="30" x2="28" y2="34" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".4"/></svg>`,
-  hydro: `<svg viewBox="0 0 80 80" fill="none" ><rect x="14" y="14" width="52" height="52" rx="6" stroke="#C9A84C" stroke-width="2.5"/><rect x="18" y="18" width="44" height="44" rx="4" fill="#C9A84C" fill-opacity=".04"/><path d="M30 40 Q40 28 50 40 Q40 52 30 40Z" stroke="#C9A84C" stroke-width="2" fill="#C9A84C" fill-opacity=".1"/></svg>`,
-  privacy: `<svg viewBox="0 0 80 80" fill="none" ><rect x="14" y="14" width="52" height="52" rx="6" stroke="#C9A84C" stroke-width="2.5"/><rect x="18" y="18" width="44" height="44" rx="4" fill="#C9A84C" fill-opacity=".04"/><path d="M20 40 Q40 20 60 40 Q40 60 20 40Z" stroke="#C9A84C" stroke-width="2" fill="none"/><circle cx="40" cy="40" r="6" stroke="#C9A84C" stroke-width="2"/><line x1="16" y1="16" x2="64" y2="64" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-opacity=".5"/></svg>`,
-  mount: `<svg viewBox="0 0 80 80" fill="none" ><circle cx="40" cy="32" r="16" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="32" r="6" stroke="#C9A84C" stroke-width="2"/><line x1="40" y1="48" x2="40" y2="62" stroke="#C9A84C" stroke-width="3" stroke-linecap="round"/><path d="M28 62 Q40 58 52 62" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/><path d="M24 16 Q40 8 56 16" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".5"/></svg>`,
-  grip: `<svg viewBox="0 0 80 80" fill="none" ><rect x="28" y="10" width="24" height="44" rx="5" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="62" r="6" stroke="#C9A84C" stroke-width="2"/><line x1="34" y1="22" x2="46" y2="22" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".5"/><line x1="34" y1="28" x2="46" y2="28" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".5"/><line x1="34" y1="34" x2="46" y2="34" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-opacity=".5"/></svg>`,
-  ring: `<svg viewBox="0 0 80 80" fill="none" ><rect x="18" y="8" width="44" height="64" rx="7" stroke="#C9A84C" stroke-width="2" stroke-opacity=".4"/><circle cx="40" cy="26" r="10" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="26" r="4" fill="#C9A84C" fill-opacity=".15"/><circle cx="52" cy="26" r="8" stroke="#C9A84C" stroke-width="2.5"/><circle cx="52" cy="26" r="3" fill="#C9A84C" fill-opacity=".15"/></svg>`,
-  lens: `<svg viewBox="0 0 80 80" fill="none" ><circle cx="40" cy="40" r="24" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="40" r="16" stroke="#C9A84C" stroke-width="2" stroke-opacity=".6"/><circle cx="40" cy="40" r="8" fill="#C9A84C" fill-opacity=".1" stroke="#C9A84C" stroke-width="2"/><line x1="40" y1="16" x2="40" y2="20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="60" x2="40" y2="64" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="40" x2="20" y2="40" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/><line x1="60" y1="40" x2="64" y2="40" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/></svg>`,
-  camfilm: `<svg viewBox="0 0 80 80" fill="none" ><rect x="12" y="22" width="56" height="36" rx="6" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="40" r="10" stroke="#C9A84C" stroke-width="2.5"/><circle cx="40" cy="40" r="4" fill="#C9A84C" fill-opacity=".2"/><rect x="30" y="16" width="8" height="6" rx="2" stroke="#C9A84C" stroke-width="1.5"/><circle cx="58" cy="28" r="3" fill="#C9A84C" fill-opacity=".3" stroke="#C9A84C" stroke-width="1.5"/></svg>`,
-};
+// ── CART DATA ──
+var PRICES = {1:24.99,2:21.99,3:19.99,4:28.99,5:34.99,6:12.99,7:26.99,8:22.99,9:13.99,10:9.99,11:14.99,12:24.99,13:32.99,14:15.99,15:12.99,16:10.99};
+var NAMES  = {1:'Coque MagSafe TORRAS',2:'Coque Leather ESEBLE',3:'Coque Cloth iPhone 17',4:'Coque Wallet DUX DUCIS',5:'Chargeur GaN 60W REMAX',6:'Cable USB-C AMORUS 60W',7:'Adaptateur GaN 30W',8:'Chargeur Sans Fil Qi2',9:'Verre Trempe S24',10:'Film Hydrogel iPhone 16',11:'Anti-Espion Oppo A6',12:'Support Voiture MagSafe',13:'Camera Grip TELESIN',14:'Bague Camera iPhone 15',15:'Protection Objectif iPhone 16',16:'Film Camera S24 Ultra'};
+var cart = {};
 
-const PRODUCTS = [
-{ id:1,  cat:‘coques’,    svg:SVG.phone,    color:’#0f0a00’, brand:‘TORRAS — iPhone 16’,        name:‘Ostand Q3 Spin Coque MagSafe Kickstand Rotatif PC+TPU — Transparent’,        desc:‘Coque compatible MagSafe avec support rotatif à 360°. Matériaux PC+TPU premium, protection renforcée aux coins. Compatible recharge sans fil.’,        price:24.99, badge:‘best’ },
-{ id:2,  cat:‘coques’,    svg:SVG.wallet,   color:’#00080f’, brand:‘ESEBLE — iPhone 17 Pro’,     name:‘Coque Texturée Vintage PC + PU Leather avec Porte-Carte — Bleu’,             desc:‘Coque style cuir vintage avec emplacement pour 2 cartes. Texture premium, protection complète, design élégant en coloris bleu profond.’,             price:21.99, oldPrice:29.99, badge:‘sale’ },
-{ id:3,  cat:‘coques’,    svg:SVG.cloth,    color:’#080808’, brand:‘iPhone 17 Pro’,              name:‘Coque Cloth Texture TPU PU Leather avec Porte-Carte & Kickstand — Noir’,    desc:‘Texture tissu unique, combinaison TPU souple et PU leather rigide. Support intégré et porte-carte. Protection anti-choc niveau militaire.’,    price:19.99, badge:‘new’ },
-{ id:4,  cat:‘coques’,    svg:SVG.card,     color:’#06060f’, brand:‘DUX DUCIS — Samsung S24’,    name:‘Coque Portefeuille Cuir Véritable Magnétique 3 Cartes — Noir’,               desc:‘Cuir véritable, fermeture magnétique sécurisée. 3 emplacements cartes, compartiment billets. Design slim, protection écran intégrée.’,               price:28.99, badge:‘best’ },
-{ id:5,  cat:‘chargeurs’, svg:SVG.charger,  color:’#0f0500’, brand:‘REMAX — EU Plug’,            name:‘Chargeur GaN 60W Set USB-C to C Cable Type-C PD Quick Charge — Orange’,      desc:‘Technologie GaN dernière génération, 60W total. Inclus câble USB-C to C 1m. Compatible iPhone 15/16, Samsung, MacBook.’,                              price:34.99, oldPrice:44.99, badge:‘sale’ },
-{ id:6,  cat:‘chargeurs’, svg:SVG.cable,    color:’#0a0800’, brand:‘AMORUS — USB-C 60W’,         name:‘Câble USB-C to USB-C PD 3.0 60W Nylon Tressé 1m Fast Charge’,               desc:‘Nylon tressé ultra-résistant, testé 20 000 flexions. PD 3.0 jusqu'à 60W. Compatible tous appareils USB-C. Connecteurs renforcés.’,               price:12.99 },
-{ id:7,  cat:‘chargeurs’, svg:SVG.adapter,  color:’#060a00’, brand:‘AMORUS — GaN 30W’,           name:‘Adaptateur GaN PD 30W Type-C + QC 18W USB-A Chargeur Mural EU Plug’,         desc:‘Double port simultané : USB-C PD 30W + USB-A QC 18W. Taille compacte, prise EU intégrée. Sécurité multi-protections, certifié CE.’,         price:26.99, badge:‘new’ },
-{ id:8,  cat:‘chargeurs’, svg:SVG.wireless, color:’#080808’, brand:‘Q12 — Qi2 Universel’,        name:‘Chargeur Sans Fil 25W MagSafe Type-C Qi2 Magnétique Portable — Noir’,        desc:‘Charge sans fil magnétique 25W, compatible MagSafe et Qi2. Alignement parfait automatique. Design ultra-plat, finition premium noir mat.’,        price:22.99, badge:‘best’ },
-{ id:9,  cat:‘protection’,svg:SVG.glass,    color:’#000f00’, brand:‘Samsung Galaxy S24’,         name:‘Verre Trempé Full Screen 9H Anti-Lumière Bleue HD Full Glue’,                desc:‘Dureté 9H, résistance aux rayures maximale. Filtre lumière bleue -40%. Adhésif full glue, pose sans bulles. Toucher ultra-sensible conservé.’,                price:13.99, badge:‘best’ },
-{ id:10, cat:‘protection’,svg:SVG.hydro,    color:’#00060f’, brand:‘iPhone 16 / 16e’,            name:‘Film Hydrogel PET Full Coverage Transparent — Protection Souple’,            desc:‘Film hydrogel auto-cicatrisant, épousé parfaitement les courbes. Transparence HD 99.9%. Résistant aux rayures quotidiennes. Ultra-fin 0.15mm.’,            price:9.99, oldPrice:14.99, badge:‘sale’ },
-{ id:11, cat:‘protection’,svg:SVG.privacy,  color:’#0a000a’, brand:‘Oppo A6 5G’,                 name:‘Verre Trempé Anti-Espion 180° Privacy Protection Bord Noir’,                 desc:‘Protection vie privée 180° : invisible sur les côtés. Dureté 9H, anti-empreintes. Bord noir élégant. Pose facile avec kit d'installation inclus.’,                 price:14.99, badge:‘new’ },
-{ id:12, cat:‘magsafe’,   svg:SVG.mount,    color:’#0f000a’, brand:‘MagSafe — Universel’,        name:‘Support Voiture Magnétique 360° Tableau de Bord Qi2 Compatible’,             desc:‘Aimants N52 ultra-puissants, rotation 360° fluide. Compatible MagSafe et tous smartphones. Fixation tableau de bord ou grille d'aération.’,             price:24.99, badge:‘best’ },
-{ id:13, cat:‘magsafe’,   svg:SVG.grip,     color:’#000f08’, brand:‘TELESIN — MagSafe’,          name:‘Camera Grip Magnétique MFI Certifié Poignée Photo Smartphone’,               desc:‘Poignée ergonomique professionnelle certifiée MFI. Connexion MagSafe magnétique. Bouton déclencheur Bluetooth. Trépied 1/4” intégré.’,               price:32.99 },
-{ id:14, cat:‘camera’,    svg:SVG.ring,     color:’#0f0f00’, brand:‘iPhone 15 Pro Max’,          name:‘Bague Protection Caméra Titane Brossé Premium Anti-Rayures’,                 desc:‘Alliage de titane brossé, finition premium. Protection complète du module caméra contre rayures et chocs. Installation sans colle, magnétique.’,                 price:15.99, badge:‘new’ },
-{ id:15, cat:‘camera’,    svg:SVG.lens,     color:’#000f0f’, brand:‘iPhone 16 Pro / Pro Max’,    name:‘Protection Objectif Verre Trempé 9H Contour Alliage Aluminium’,              desc:‘Verre trempé 9H sur chaque objectif. Contour aluminium anodisé anti-rayures. Ultra-plat, n'affecte pas les photos. Pack 3 objectifs inclus.’,              price:12.99, badge:‘best’ },
-{ id:16, cat:‘camera’,    svg:SVG.camfilm,  color:’#08000f’, brand:‘Samsung S24 Ultra’,          name:‘Film Protection Caméra Arrière HD Clear Anti-Scratch Tempered Glass’,        desc:‘Film verre trempé HD, transparence totale sans effet sur la qualité photo. Protection complète du dos caméra. Anti-empreintes, anti-reflets.’,        price:10.99 },
-];
-
-let cart = [];
-
-// ── PRODUCT MODAL ──
-function openProduct(id) {
-const p = PRODUCTS.find(x => x.id === id);
-if (!p) return;
-const iconEl = document.getElementById(‘modal-icon’);
-iconEl.style.background = p.color;
-iconEl.innerHTML = `<div style="width:120px;height:120px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 0 30px rgba(201,168,76,.3))">${p.svg}</div>`;
-document.getElementById(‘modal-badge’).innerHTML = p.badge ? badge(p.badge) : ‘’;
-document.getElementById(‘modal-brand’).textContent = p.brand;
-document.getElementById(‘modal-name’).textContent = p.name;
-document.getElementById(‘modal-desc’).textContent = p.desc;
-document.getElementById(‘modal-price’).textContent = p.price.toFixed(2) + ‘€’;
-document.getElementById(‘modal-old’).textContent = p.oldPrice ? p.oldPrice.toFixed(2) + ‘€’ : ‘’;
-document.getElementById(‘modal-add’).onclick = () => { addToCart(p.id); closeProduct(); };
-document.getElementById(‘prodModal’).classList.add(‘open’);
-document.body.style.overflow = ‘hidden’;
-}
-function closeProduct() {
-document.getElementById(‘prodModal’).classList.remove(‘open’);
-document.body.style.overflow = ‘’;
-}
-
-function badge(b){
-if(!b) return ‘’;
-const cls={best:‘b-best’,new:‘b-new’,sale:‘b-sale’};
-const lbl={best:‘⭐ Best’,new:‘✦ New’,sale:’% Promo’};
-return `<div class="prod-badge ${cls[b]}">${lbl[b]}</div>`;
-}
-
-function renderProds(filter=‘all’){
-const list = filter===‘all’ ? PRODUCTS : PRODUCTS.filter(p=>p.cat===filter);
-document.getElementById(‘prodsGrid’).innerHTML = list.map(p=>` <div class="prod" data-id="${p.id}"> <div class="prod-img" style="background:${p.color}"> ${badge(p.badge)} <div class="prod-icon-wrap">${p.svg}</div> </div> <div class="prod-info"> <div class="prod-brand">${p.brand}</div> <div class="prod-name">${p.name}</div> <div class="prod-foot"> <div> <span class="prod-price">${p.price.toFixed(2)}&euro;</span> ${p.oldPrice ? '<span class="prod-old">'+p.oldPrice.toFixed(2)+'&euro;</span>' : ''} </div> <button class="add-btn cart-add" data-id="${p.id}" title="Ajouter au panier"> <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg> </button> </div> </div> </div>`).join(’’);
-
-// Attach events after render
-document.querySelectorAll(’.prod’).forEach(el => {
-el.addEventListener(‘click’, function(e) {
-if (e.target.closest(’.cart-add’)) return;
-openProduct(parseInt(this.dataset.id));
+// ── CATEGORY FILTER ──
+document.querySelectorAll(’.cf-btn’).forEach(function(btn) {
+btn.addEventListener(‘click’, function() {
+var cat = this.dataset.cat;
+document.querySelectorAll(’.cf-btn’).forEach(function(b){ b.classList.remove(‘cf-active’); });
+this.classList.add(‘cf-active’);
+document.querySelectorAll(’.prod’).forEach(function(p){
+p.style.display = (cat === ‘all’ || p.dataset.cat === cat) ? ‘’ : ‘none’;
 });
 });
-document.querySelectorAll(’.cart-add’).forEach(el => {
-el.addEventListener(‘click’, function(e) {
+});
+
+// ── CATEGORY CARDS → scroll to products ──
+document.querySelectorAll(’.cat’).forEach(function(el) {
+el.addEventListener(‘click’, function() {
+var cat = this.className.replace(/.*cat-([a-z]+).*/, ‘$1’);
+var validCats = [‘coques’,‘chargeurs’,‘protection’,‘magsafe’,‘camera’];
+if (validCats.indexOf(cat) >= 0) {
+document.querySelectorAll(’.cf-btn’).forEach(function(b){ b.classList.remove(‘cf-active’); });
+var btn = document.querySelector(’.cf-btn[data-cat=”’+cat+’”]’);
+if (btn) btn.classList.add(‘cf-active’);
+document.querySelectorAll(’.prod’).forEach(function(p){
+p.style.display = (p.dataset.cat === cat) ? ‘’ : ‘none’;
+});
+}
+setTimeout(function(){ document.getElementById(‘prods’).scrollIntoView({behavior:‘smooth’}); }, 50);
+});
+});
+
+// ── ADD TO CART ──
+document.querySelectorAll(’.add-btn’).forEach(function(btn) {
+btn.addEventListener(‘click’, function(e) {
 e.stopPropagation();
-addToCart(parseInt(this.dataset.id));
-});
-});
-}
-
-function filterCat(cat){
-renderProds(cat);
-setTimeout(()=>{
-document.getElementById(‘prods’).scrollIntoView({behavior:‘smooth’, block:‘start’});
-}, 50);
-}
-
-function addToCart(id){
-const p=PRODUCTS.find(x=>x.id===id);
-const ex=cart.find(x=>x.id===id);
-ex ? ex.qty++ : cart.push({…p,qty:1});
-updateCart(); showToast();
-}
-
-function changeQty(id,d){
-const it=cart.find(x=>x.id===id);
-if(!it) return;
-it.qty+=d;
-if(it.qty<=0) cart=cart.filter(x=>x.id!==id);
+var id = parseInt(this.dataset.id);
+cart[id] = (cart[id] || 0) + 1;
 updateCart();
-}
-
-function updateCart(){
-const count=cart.reduce((a,b)=>a+b.qty,0);
-document.getElementById(‘cartN’).textContent=count;
-const total=cart.reduce((a,b)=>a+b.price*b.qty,0);
-document.getElementById(‘cartAmt’).textContent=total.toFixed(2)+‘€’;
-const body=document.getElementById(‘cartBody’);
-const ft=document.getElementById(‘cartFt’);
-if(cart.length===0){
-body.innerHTML=’<div class="c-empty"><div class="c-empty-icon">🛍️</div>Votre panier est vide</div>’;
-ft.style.display=‘none’;
-} else {
-ft.style.display=‘block’;
-body.innerHTML=cart.map(it=>` <div class="c-item"> <div class="c-thumb" style="background:${it.color};display:flex;align-items:center;justify-content:center;width:52px;height:52px;flex-shrink:0"><div style="width:36px;height:36px">${it.svg}</div></div> <div style="flex:1"> <div class="c-name">${it.name}</div> <div class="c-price">${(it.price*it.qty).toFixed(2)}&euro;</div> <div class="c-qty"> <button class="q-btn q-minus" data-id="${it.id}">−</button> <span class="q-n">${it.qty}</span> <button class="q-btn q-plus" data-id="${it.id}">+</button> </div> </div> </div>`).join(’’);
-body.querySelectorAll(’.q-minus’).forEach(b=>b.addEventListener(‘click’,()=>changeQty(parseInt(b.dataset.id),-1)));
-body.querySelectorAll(’.q-plus’).forEach(b=>b.addEventListener(‘click’,()=>changeQty(parseInt(b.dataset.id),1)));
-}
-}
-
-function openCart(){document.getElementById(‘cartOverlay’).classList.add(‘open’);document.getElementById(‘cartPanel’).classList.add(‘open’);}
-function closeCart(){document.getElementById(‘cartOverlay’).classList.remove(‘open’);document.getElementById(‘cartPanel’).classList.remove(‘open’);}
-function checkout(){alert(‘🎉 Intégrez Stripe ou PayPal ici pour activer le paiement sécurisé.’);}
-function showToast(){const t=document.getElementById(‘toast’);t.classList.add(‘show’);setTimeout(()=>t.classList.remove(‘show’),2400);}
-
-// Cursor
-const cur=document.getElementById(‘cur’),ring=document.getElementById(‘cur-ring’);
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener(‘mousemove’,e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+‘px’;cur.style.top=my+‘px’;});
-(function anim(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;ring.style.left=rx+‘px’;ring.style.top=ry+‘px’;requestAnimationFrame(anim)})();
-document.querySelectorAll(‘a,button,.cat,.prod’).forEach(el=>{
-el.addEventListener(‘mouseenter’,()=>document.getElementById(‘cur’).style.transform=‘translate(-50%,-50%) scale(2)’);
-el.addEventListener(‘mouseleave’,()=>document.getElementById(‘cur’).style.transform=‘translate(-50%,-50%) scale(1)’);
+showToast();
 });
-renderProds();
+});
+
+function updateCart() {
+var total = 0, count = 0;
+Object.keys(cart).forEach(function(id) { count += cart[id]; total += PRICES[id] * cart[id]; });
+document.getElementById(‘cartN’).textContent = count;
+document.getElementById(‘cartAmt’).textContent = total.toFixed(2) + ‘\u20ac’;
+var body = document.getElementById(‘cartBody’);
+var ft = document.getElementById(‘cartFt’);
+if (count === 0) {
+body.innerHTML = ‘<div class="c-empty"><div class="c-empty-icon">\uD83D\uDECD\uFE0F</div>Votre panier est vide</div>’;
+ft.style.display = ‘none’;
+} else {
+ft.style.display = ‘block’;
+var html = ‘’;
+Object.keys(cart).forEach(function(id) {
+if (cart[id] > 0) {
+html += ‘<div class="c-item"><div class="c-thumb" style="background:#1a1200;color:#C9A84C;font-size:20px;display:flex;align-items:center;justify-content:center;width:52px;height:52px;flex-shrink:0">🛒</div><div style="flex:1"><div class="c-name">’+NAMES[id]+’</div><div class="c-price">’+(PRICES[id]*cart[id]).toFixed(2)+’\u20ac</div><div class="c-qty"><button class="q-btn" data-id="'+id+'" data-d="-1">\u2212</button><span class="q-n">’+cart[id]+’</span><button class="q-btn" data-id="'+id+'" data-d="1">+</button></div></div></div>’;
+}
+});
+body.innerHTML = html;
+body.querySelectorAll(’.q-btn’).forEach(function(b) {
+b.addEventListener(‘click’, function() {
+var id = this.dataset.id, d = parseInt(this.dataset.d);
+cart[id] = (cart[id] || 0) + d;
+if (cart[id] <= 0) delete cart[id];
+updateCart();
+});
+});
+}
+}
+
+function openCart(){ document.getElementById(‘cartOverlay’).classList.add(‘open’); document.getElementById(‘cartPanel’).classList.add(‘open’); }
+function closeCart(){ document.getElementById(‘cartOverlay’).classList.remove(‘open’); document.getElementById(‘cartPanel’).classList.remove(‘open’); }
+function checkout(){ alert(‘Integrez Stripe ou PayPal pour activer le paiement.’); }
+function showToast(){ var t=document.getElementById(‘toast’); t.classList.add(‘show’); setTimeout(function(){ t.classList.remove(‘show’); }, 2400); }
+
+// ── CURSOR (desktop only) ──
+var cur=document.getElementById(‘cur’), ring=document.getElementById(‘cur-ring’);
+var mx=0,my=0,rx=0,ry=0;
+document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.clientY; cur.style.left=mx+‘px’; cur.style.top=my+‘px’; });
+(function anim(){ rx+=(mx-rx)*.11; ry+=(my-ry)*.11; ring.style.left=rx+‘px’; ring.style.top=ry+‘px’; requestAnimationFrame(anim); })();
 </script>
 
 </body>
