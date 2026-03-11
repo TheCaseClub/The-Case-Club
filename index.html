@@ -31,7 +31,7 @@
 
 /* NAV */
 nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:22px 52px; background:rgba(0,0,0,.97); border-bottom:1px solid var(–border); }
-.logo { font-family:‘Playfair Display’,serif; font-size:20px; font-weight:900; letter-spacing:3px; text-decoration:none; color:var(–gold); }
+.logo { font-family:‘Playfair Display’,serif; font-size:20px; font-weight:900; letter-spacing:3px; text-decoration:none; color:var(–gold) !important; }
 .nav-links { display:flex; gap:34px; list-style:none; }
 .nav-links a { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(–muted); text-decoration:none; transition:color .3s; }
 .nav-links a:hover { color:var(–gold); }
@@ -93,8 +93,7 @@ h1.hero-title em { font-style:italic; color:var(–white); }
 .cat-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.92) 0%,transparent 55%); }
 .cat-icon { position:absolute; top:28px; left:28px; font-size:30px; opacity:.5; transition:opacity .3s,transform .3s; }
 .cat:hover .cat-icon { opacity:1; transform:scale(1.1); }
-.cat-ring { position:absolute; top:18px; right:18px; width:65px; height:65px; border:1px solid rgba(201,168,76,.1); border-radius:50%; transition:transform .65s; }
-.cat:hover .cat-ring { transform:scale(1.5); }
+.cat-ring { display:none; }
 .cat-body { position:absolute; bottom:22px; left:22px; right:22px; }
 .cat-name { font-family:‘Playfair Display’,serif; font-size:19px; font-weight:700; color:var(–gold); margin-bottom:4px; }
 .cat-cnt { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(–white); }
@@ -425,90 +424,90 @@ nav { padding:16px 20px; }
 const PRODUCTS = [
 // ── COQUES ──
 { id:1, cat:‘coques’,
-img:‘https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2021/01/05/06/40/iphone-5889570_640.jpg’,
 brand:‘TORRAS — iPhone 16’,
 name:‘Ostand Q3 Spin Coque MagSafe Kickstand Rotatif PC+TPU — Transparent’,
 price:24.99, badge:‘best’ },
 { id:2, cat:‘coques’,
-img:‘https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2016/11/29/05/08/business-1867762_640.jpg’,
 brand:‘ESEBLE — iPhone 17 Pro’,
 name:‘Coque Texturée Vintage PC + PU Leather avec Porte-Carte — Bleu’,
 price:21.99, oldPrice:29.99, badge:‘sale’ },
 { id:3, cat:‘coques’,
-img:‘https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_640.jpg’,
 brand:‘iPhone 17 Pro’,
 name:‘Coque Cloth Texture TPU PU Leather avec Porte-Carte & Kickstand — Noir’,
 price:19.99, badge:‘new’ },
 { id:4, cat:‘coques’,
-img:‘https://images.unsplash.com/photo-1592890288564-76628a30a657?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_640.jpg’,
 brand:‘DUX DUCIS — Samsung S24’,
 name:‘Coque Portefeuille Cuir Véritable Magnétique 3 Cartes — Noir’,
 price:28.99, badge:‘best’ },
 
 // ── CHARGEURS & CÂBLES ──
 { id:5, cat:‘chargeurs’,
-img:‘https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2020/02/03/00/12/charger-4814672_640.jpg’,
 brand:‘REMAX — EU Plug’,
 name:‘Chargeur GaN 60W Set USB-C to C Cable Type-C PD Quick Charge — Orange’,
 price:34.99, oldPrice:44.99, badge:‘sale’ },
 { id:6, cat:‘chargeurs’,
-img:‘https://images.unsplash.com/photo-1609592806596-b2b8f7c4a2c4?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2016/10/10/15/11/usb-1728483_640.jpg’,
 brand:‘AMORUS — USB-C 60W’,
 name:‘Câble USB-C to USB-C PD 3.0 60W Nylon Tressé 1m Fast Charge’,
 price:12.99 },
 { id:7, cat:‘chargeurs’,
-img:‘https://images.unsplash.com/photo-1626379953822-baec19c3accd?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2017/08/10/08/47/laptop-2617310_640.jpg’,
 brand:‘AMORUS — GaN 30W’,
 name:‘Adaptateur GaN PD 30W Type-C + QC 18W USB-A Chargeur Mural EU Plug’,
 price:26.99, badge:‘new’ },
 { id:8, cat:‘chargeurs’,
-img:‘https://images.unsplash.com/photo-1618478594486-c65b899c4936?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2021/09/09/18/11/wireless-6611412_640.jpg’,
 brand:‘Q12 — Qi2 Universel’,
 name:‘Chargeur Sans Fil 25W MagSafe Type-C Qi2 Magnétique Portable — Noir’,
 price:22.99, badge:‘best’ },
 
 // ── PROTECTION ÉCRAN ──
 { id:9, cat:‘protection’,
-img:‘https://images.unsplash.com/photo-1601972599720-36938d4ecd31?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2017/01/22/12/07/imac-1999636_640.jpg’,
 brand:‘Samsung Galaxy S24’,
 name:‘Verre Trempé Full Screen 9H Anti-Lumière Bleue HD Full Glue’,
 price:13.99, badge:‘best’ },
 { id:10, cat:‘protection’,
-img:‘https://images.unsplash.com/photo-1615751072497-5f5169febe17?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2016/02/01/00/53/iphone-1172246_640.jpg’,
 brand:‘iPhone 16 / 16e’,
 name:‘Film Hydrogel PET Full Coverage Transparent — Protection Souple’,
 price:9.99, oldPrice:14.99, badge:‘sale’ },
 { id:11, cat:‘protection’,
-img:‘https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2015/09/15/07/41/iphone-940715_640.jpg’,
 brand:‘Oppo A6 5G’,
 name:‘Verre Trempé Anti-Espion 180° Privacy Protection Bord Noir’,
 price:14.99, badge:‘new’ },
 
 // ── MAGSAFE ──
 { id:12, cat:‘magsafe’,
-img:‘https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2017/05/24/21/33/workplace-2341642_640.jpg’,
 brand:‘MagSafe — Universel’,
 name:‘Support Voiture Magnétique 360° Tableau de Bord Qi2 Compatible’,
 price:24.99, badge:‘best’ },
 { id:13, cat:‘magsafe’,
-img:‘https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_640.jpg’,
 brand:‘TELESIN — MagSafe’,
 name:‘Camera Grip Magnétique MFI Certifié Poignée Photo Smartphone’,
 price:32.99 },
 
 // ── CAMÉRA ──
 { id:14, cat:‘camera’,
-img:‘https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2016/11/29/06/17/smartphone-1869510_640.jpg’,
 brand:‘iPhone 15 Pro Max’,
 name:‘Bague Protection Caméra Titane Brossé Premium Anti-Rayures’,
 price:15.99, badge:‘new’ },
 { id:15, cat:‘camera’,
-img:‘https://images.unsplash.com/photo-1616353071855-2c045c4cd0c0?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2017/12/27/14/06/iphone-3042495_640.jpg’,
 brand:‘iPhone 16 Pro / Pro Max’,
 name:‘Protection Objectif Verre Trempé 9H Contour Alliage Aluminium’,
 price:12.99, badge:‘best’ },
 { id:16, cat:‘camera’,
-img:‘https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&q=80’,
+img:‘https://cdn.pixabay.com/photo/2014/09/07/22/34/camera-438455_640.jpg’,
 brand:‘Samsung S24 Ultra’,
 name:‘Film Protection Caméra Arrière HD Clear Anti-Scratch Tempered Glass’,
 price:10.99 },
@@ -530,7 +529,9 @@ document.getElementById(‘prodsGrid’).innerHTML = list.map(p=>` <div class="p
 
 function filterCat(cat){
 renderProds(cat);
-document.getElementById(‘prods’).scrollIntoView({behavior:‘smooth’});
+setTimeout(()=>{
+document.getElementById(‘prods’).scrollIntoView({behavior:‘smooth’, block:‘start’});
+}, 50);
 }
 
 function addToCart(id){
