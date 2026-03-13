@@ -307,19 +307,30 @@ nav { padding:16px 20px; }
     <a href="#cats" class="btn-outline">Voir les catégories</a>
   </div>
   
-  <div class="phone-selector">
+ <div class="phone-selector">
   <p class="phone-selector-title">QUEL PORTABLE AVEZ-VOUS ?</p>
   <div class="phone-selector-row">
- <div class="phone-selector-row">
-  <div class="phone-select-wrap">
-    <select class="phone-select" id="selectMarque" onchange="updateModeles()">
-      <option value="">Marque</option>
-      <option value="apple">Apple</option>
-      <option value="samsung_s">Samsung Serie S</option>
-      <option value="samsung_a">Samsung Serie A</option>
-      <option value="google">Google</option>
-    </select>
+    <div class="phone-select-wrap" id="wrapMarque">
+      <div class="phone-select-btn" id="btnMarque" onclick="toggleDropdown('marque')">
+        <span id="labelMarque">MARQUE</span>
+      </div>
+      <div class="phone-dropdown" id="dropMarque">
+        <div onclick="selectMarque('')">Marque</div>
+        <div onclick="selectMarque('apple')">Apple</div>
+        <div onclick="selectMarque('samsung_s')">Samsung Serie S</div>
+        <div onclick="selectMarque('samsung_a')">Samsung Serie A</div>
+        <div onclick="selectMarque('google')">Google</div>
+      </div>
+    </div>
+    <div class="phone-select-wrap" id="wrapModele">
+      <div class="phone-select-btn" id="btnModele" onclick="toggleDropdown('modele')">
+        <span id="labelModele">MODÈLE</span>
+      </div>
+      <div class="phone-dropdown" id="dropModele"></div>
+    </div>
   </div>
+</div>
+
   <div class="phone-select-wrap">
     <select class="phone-select" id="selectModele">
       <option value="">Modèle</option>
@@ -892,9 +903,16 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   background: #C9A84C !important;
   color: #000 !
     
+.phone-selector { margin-top: 28px; width: 100%; }
+.phone-selector-title { font-size: 11px; letter-spacing: 3px; color: #C9A84C; text-align: center; margin-bottom: 14px; font-weight: 600; }
 .phone-selector-row { display: flex; gap: 14px; justify-content: center; }
-.phone-select-wrap { width: calc(50% - 7px); max-width: calc(50% - 7px); flex-shrink: 0; overflow: hidden; }
-.phone-select { width: 100%; max-width: 100%; -webkit-appearance: none; appearance: none; background: #000; color: #fff; border: 1px solid #C9A84C; padding: 16px 14px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; }
+.phone-select-wrap { position: relative; width: calc(50% - 7px); flex-shrink: 0; }
+.phone-select-btn { background: #000; color: #fff; border: 1px solid #C9A84C; padding: 16px 14px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; text-align: center; }
+.phone-dropdown { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #000; border: 1px solid #C9A84C; border-top: none; z-index: 100; max-height: 200px; overflow-y: auto; }
+.phone-dropdown div { padding: 10px 14px; font-size: 11px; color: #fff; cursor: pointer; letter-spacing: 1px; }
+.phone-dropdown div:hover { background: #C9A84C; color: #000; }
+.phone-dropdown.open { display: block; }
+
 
 
 
@@ -963,6 +981,44 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   sel.innerHTML = '<option value="">Modèle</option>';
   (modeles[document.getElementById('selectMarque').value] || []).forEach(m => sel.innerHTML += `<option>${m}</option>`);
 }
+
+  function toggleDropdown(which) {
+  var drop = document.getElementById('drop' + (which === 'marque' ? 'Marque' : 'Modele'));
+  drop.classList.toggle('open');
+}
+
+function selectMarque(val) {
+  var label = val === '' ? 'MARQUE' : document.querySelector('#dropMarque [onclick="selectMarque(\'' + val + '\')"]').textContent.toUpperCase();
+  document.getElementById('labelMarque').textContent = label;
+  document.getElementById('dropMarque').classList.remove('open');
+  updateModeles(val);
+}
+
+function updateModeles(marque) {
+  var modeles = {
+    apple: ['iPhone 6','iPhone 6 Plus'/* ... */],
+    samsung_a: ['Galaxy A02s'/* ... */],
+    samsung_s: ['Galaxy S10'/* ... */],
+    google: ['Pixel 3'/* ... */]
+  };
+  var drop = document.getElementById('dropModele');
+  drop.innerHTML = '<div onclick="selectModele(\'\')">Modèle</div>';
+  document.getElementById('labelModele').textContent = 'MODÈLE';
+  (modeles[marque] || []).forEach(function(m) {
+    drop.innerHTML += '<div onclick="selectModele(\'' + m + '\')">' + m + '</div>';
+  });
+}
+
+function selectModele(val) {
+  document.getElementById('labelModele').textContent = val === '' ? 'MODÈLE' : val.toUpperCase();
+  document.getElementById('dropModele').classList.remove('open');
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.phone-select-wrap')) {
+    document.querySelectorAll('.phone-dropdown').forEach(function(d) { d.classList.remove('open'); });
+  }
+});
 
 
 </script>
