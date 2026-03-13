@@ -890,7 +890,8 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
     .phone-selector { margin-top: 28px; width: 100%; }
 .phone-selector-title { font-size: 11px; letter-spacing: 3px; color: #C9A84C; text-align: center; margin-bottom: 14px; font-weight: 600; }
 .phone-selector-row { display: flex; gap: 14px; }
-.phone-select { flex: 0 0 calc(50% - 7px); min-width: 0; background: #000; ...
+.phone-select { width: calc(50% - 7px); max-width: calc(50% - 7px); box-sizing: border-box; flex: none; background: #000; color: #fff; border: 1px solid #C9A84C; padding: ...
+
 
 
 
