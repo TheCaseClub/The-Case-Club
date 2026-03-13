@@ -844,6 +844,23 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
     max-height: 200px !important;
     object-fit: contain !important;
   }
+/* Boutons filtre — pilules dorées */
+.cf-btn, .cf-btn:link, .cf-btn:visited {
+  color: #000 !important;
+  background: transparent !important;
+  border: 2px solid #C9A84C !important;
+  border-radius: 999px !important;
+  padding: 8px 22px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  transition: background 0.2s, color 0.2s !important;
+}
+
+.cf-btn:hover, .cf-btn.active {
+  background: #C9A84C !important;
+  color: #000 !important;
+}
 </style>
 
 <script>
