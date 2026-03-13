@@ -300,48 +300,18 @@ nav { padding:16px 20px; }
   <div class="hero-cta">
     <a href="#prods" class="btn-gold">Explorer la collection</a>
     <a href="#cats" class="btn-outline">Voir les catégories</a>
-    <style>
- .phone-selector {
-  margin-top: 36px;
-  width: 100%;
-}
-.phone-selector-title {
-  font-size: 13px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #C9A84C;
-  text-align: center;
-  margin-bottom: 18px;
-  font-weight: 600;
-  font-family: 'DM Sans', sans-serif;
-}
-.phone-selector-row {
-  display: flex;
-  gap: 12px;
-}
-.phone-select {
-  flex: 1;
-  background: #000000;
-  color: #C9A84C;
-  border: 1px solid #C9A84C;
-  padding: 16px 20px;
-  font-size: 13px;
-  font-family: 'DM Sans', sans-serif;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 600;
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  border-radius: 0;
-  outline: none;
-}
-.phone-select option {
-  background: #000;
-  color: #C9A84C;
-}
-    <style>
-
+  </div><div class="phone-selector">
+  <p class="phone-selector-title">QUEL PORTABLE AVEZ-VOUS ?</p>
+  <div class="phone-selector-row">
+    <select class="phone-select" id="selectMarque" onchange="updateModeles()">
+      <option value="">Marque</option>
+      <option value="apple">Apple</option>
+      <option value="samsung">Samsung</option>
+      <option value="google">Google</option>
+    </select>
+    <select class="phone-select" id="selectModele">
+      <option value="">Modèle</option>
+    </select>
   </div>
 </div>
 
