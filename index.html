@@ -310,16 +310,18 @@ nav { padding:16px 20px; }
   <div class="phone-selector">
   <p class="phone-selector-title">QUEL PORTABLE AVEZ-VOUS ?</p>
   <div class="phone-selector-row">
+  <div class="phone-select-wrap">
     <select class="phone-select" id="selectMarque" onchange="updateModeles()">
-      <option value="">Marque</option>
-      <option value="apple">Apple</option>
-      <option value="samsung_s">Samsung Serie S</option>
-      <option value="samsung_a">Samsung Serie A</option>
-      <option value="google">Google</option>
+      ...
     </select>
+  </div>
+  <div class="phone-select-wrap">
     <select class="phone-select" id="selectModele">
-      <option value="">Modèle</option>
+      ...
     </select>
+  </div>
+</div>
+
   </div>
 </div>
 
@@ -887,10 +889,11 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   background: #C9A84C !important;
   color: #000 !
     
-    .phone-selector { margin-top: 28px; width: 100%; }
-.phone-selector-title { font-size: 11px; letter-spacing: 3px; color: #C9A84C; text-align: center; margin-bottom: 14px; font-weight: 600; }
-.phone-selector-row { display: flex; gap: 14px; overflow: hidden; }
-.phone-select { width: calc(50% - 7px); max-width: calc(50% - 7px); box-sizing: border-box; flex: none; background: #000; color: #fff; border: 1px solid #C9A84C; padding: ...
+    .phone-selector-row { display: flex; gap: 14px; }
+.phone-select-wrap { flex: 1; overflow: hidden; }
+.phone-select { width: 100%; background: #000; color: #fff; border: 1px solid #C9A84C; padding: ...
+
+
 
 
 
