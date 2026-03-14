@@ -1003,7 +1003,8 @@ function selectMarque(val) {
     var div = document.createElement('div');
     div.textContent = m;
     div.onclick = function() { selectModele(m); };
-    drop.appendChild(div);
+div.addEventListener('touchstart', function(e) { e.preventDefault(); selectModele(m); }, {passive: false});
+
   });
 }
 
@@ -1018,9 +1019,16 @@ document.addEventListener('click', function(e) {
   }
 });
   
-document.addEventListener('touchend', function(e) {
+document.addEventListener('touchstart', function(e) {
+  var btnM = e.target.closest('#btnMarque');
+  var btnMo = e.target.closest('#btnModele');
+  if (btnM) { e.preventDefault(); toggleDropdown('marque'); return; }
+  if (btnMo) { e.preventDefault(); toggleDropdown('modele'); return; }
   if (!e.target.closest('.phone-select-wrap')) {
     document.querySelectorAll('.phone-dropdown').forEach(function(d) { d.classList.remove('open'); });
+  }
+}, {passive: false});
+
   }
 });
 
