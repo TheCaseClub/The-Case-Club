@@ -105,26 +105,28 @@ h1.hero-title em { font-style:italic; color:var(–white); }
 .cat:hover .cat-arrow { opacity:1; background:var(–gold); border-color:var(–gold); color:#000; }
 
 /* PRODUCTS */
-.prods-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
-.prod { background:var(–card); overflow:hidden; cursor:pointer; transition:transform .4s; position:relative; border:1px solid var(–border); }
-.prod:hover { transform:translateY(-4px); }
-.prod-img { height:220px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-.prod-icon-wrap { width:110px; height:110px; display:flex; align-items:center; justify-content:center; filter:drop-shadow(0 0 30px rgba(201,168,76,.25)); transition:transform .4s; }
+/* PRODUCTS */
+.prods-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+.prod { background:#0d0d0d; border:1px solid #1f1f1f; border-radius:12px; overflow:hidden; cursor:pointer; transition:transform .3s,border-color .3s; position:relative; }
+.prod:hover { transform:translateY(-3px); border-color:var(--gold); }
+.prod-img { height:180px; display:flex; align-items:center; justify-content:center; background:#111; border-bottom:1px solid #1f1f1f; }
+.prod-icon-wrap { width:90px; height:90px; display:flex; align-items:center; justify-content:center; opacity:.85; transition:transform .4s; }
 .prod-icon-wrap svg { width:100%; height:100%; }
-.prod:hover .prod-icon-wrap { transform:scale(1.12) translateY(-4px); }
-.prod-badge { position:absolute; top:13px; left:13px; font-size:9px; letter-spacing:2px; text-transform:uppercase; padding:4px 9px; font-weight:700; }
-.b-best { background:var(–gold); color:#000; }
+.prod:hover .prod-icon-wrap { transform:scale(1.08) translateY(-3px); }
+.prod-badge { position:absolute; top:10px; left:10px; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; padding:3px 8px; border-radius:4px; font-weight:700; }
+.b-best { background:var(--gold); color:#000; }
 .b-new  { background:#fff; color:#000; }
 .b-sale { background:#c94c4c; color:#fff; }
-.prod-info { padding:16px 18px; border-top:1px solid var(–border); }
-.prod-brand { font-size:9px; letter-spacing:2.5px; text-transform:uppercase; color:var(–gold); margin-bottom:5px; }
-.prod-name  { font-size:13px; color:var(–white); line-height:1.45; margin-bottom:13px; }
-.prod-foot  { display:flex; justify-content:space-between; align-items:center; }
-.prod-price { font-family:‘Playfair Display’,serif; font-size:20px; color:var(–gold); }
-.prod-old   { font-size:12px; color:var(–muted); text-decoration:line-through; margin-left:6px; }
-.add-btn { border:1px solid var(–border); background:transparent; color:var(–muted); width:36px; height:36px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .3s; flex-shrink:0; }
-.add-btn:hover { background:var(–gold); border-color:var(–gold); color:#000; }
-.add-btn svg { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.prod-info { padding:12px 14px 14px; }
+.prod-brand { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:4px; opacity:.8; }
+.prod-name  { font-size:12px; color:var(--white); line-height:1.5; margin-bottom:12px; }
+.prod-foot  { display:flex; justify-content:space-between; align-items:center; border-top:1px solid #1f1f1f; padding-top:10px; }
+.prod-price { font-family:'Playfair Display',serif; font-size:18px; color:var(--gold); }
+.prod-old   { font-size:11px; color:var(--muted); text-decoration:line-through; margin-left:5px; }
+.add-btn { border:1px solid #2a2a2a; background:transparent; color:var(--muted); width:34px; height:34px; border-radius:8px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .25s; flex-shrink:0; }
+.add-btn:hover { background:var(--gold); border-color:var(--gold); color:#000; }
+.add-btn svg { width:15px; height:15px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+
 
 .cat-filters { display:flex; gap:10px; flex-wrap:wrap; }
 .cf-btn, .cf-btn:link, .cf-btn:visited {
