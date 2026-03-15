@@ -1001,15 +1001,17 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   const section = document.getElementById('prods');
   section.style.display = '';
   document.querySelectorAll('.prod').forEach(p => {
-  const compat = p.dataset.compat || '';
-  if (compat === 'tous' || compat.includes(marque + '_' + modele)) {
+  const compat = (p.dataset.compat || '').toLowerCase();
+  const key = (marque + '_' + modele).toLowerCase();
+  if (compat === 'tous' || compat.includes(key)) {
     p.style.display = '';
     p.style.visibility = 'visible';
   } else {
     p.style.display = 'none';
   }
 });
-  }
+
+
 
 
 
