@@ -322,7 +322,7 @@ nav { padding:16px 20px; }
       </select>
     </div>
   <div class="phone-select-wrap" style="width:50%; flex-shrink:0; flex-grow:0;">
-      <select class="phone-select" id="selectModele" style="width:100%; box-sizing:border-box;">
+      <select class="phone-select" id="selectModele" onchange="filtrerProduits()" style="width:100%; box-sizing:border-box;">
         <option value="">Modèle</option>
       </select>
     </div>
@@ -383,7 +383,7 @@ nav { padding:16px 20px; }
 
 <!-- PRODUCTS -->
 
-<section class="sec" id="prods" style="padding-top:0">
+<section class="sec" id="prods" style="display:none">
   <div style="padding:60px 52px 32px; text-align:center; border-bottom:1px solid var(--border);">
     <div class="sec-eyebrow" style="margin-bottom:12px;">Bestsellers</div>
     <h2 class="sec-title" style="margin-bottom:32px;">Produits phares</h2>
@@ -399,7 +399,7 @@ nav { padding:16px 20px; }
   <div class="prods-grid" id="prodsGrid">
 
 ```
-<div class="prod" data-cat="coques" data-id="1">
+<div class="prod" data-cat="coques" data-compat="apple_iphone16"
   <div class="prod-img" style="background:#0f0a00">
     <div class="prod-badge b-best">Best</div>
     <div class="prod-icon-wrap">
@@ -416,7 +416,7 @@ nav { padding:16px 20px; }
   </div>
 </div>
 
-<div class="prod" data-cat="coques" data-id="2">
+<div class="prod" data-cat="coques" data-compat="apple_iphone17pro"
   <div class="prod-img" style="background:#00080f">
     <div class="prod-badge b-sale">Promo</div>
     <div class="prod-icon-wrap">
@@ -433,7 +433,7 @@ nav { padding:16px 20px; }
   </div>
 </div>
 
-<div class="prod" data-cat="coques" data-id="3">
+<div class="prod" data-cat="coques" data-compat="apple_iphone17pro"
   <div class="prod-img" style="background:#080808">
     <div class="prod-badge b-new">New</div>
     <div class="prod-icon-wrap">
@@ -450,7 +450,7 @@ nav { padding:16px 20px; }
   </div>
 </div>
 
-<div class="prod" data-cat="coques" data-id="4">
+<div class="prod" data-cat="coques" data-compat="samsung_s24"
   <div class="prod-img" style="background:#06060f">
     <div class="prod-badge b-best">Best</div>
     <div class="prod-icon-wrap">
@@ -533,7 +533,7 @@ nav { padding:16px 20px; }
   </div>
 </div>
 
-<div class="prod" data-cat="protection" data-id="9">
+<div class="prod" data-cat="coques" data-compat="samsung_s24"
   <div class="prod-img" style="background:#000f00">
     <div class="prod-badge b-best">Best</div>
     <div class="prod-icon-wrap">
