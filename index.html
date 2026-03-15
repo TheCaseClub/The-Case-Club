@@ -399,7 +399,7 @@ nav { padding:16px 20px; }
   <div class="prods-grid" id="prodsGrid">
 
 ```
-<div class="prod" data-cat="coques" data-compat="apple_iphone16"
+<div class="prod" data-cat="coques" data-compat="apple_iPhone 16"
   <div class="prod-img" style="background:#0f0a00">
     <div class="prod-badge b-best">Best</div>
     <div class="prod-icon-wrap">
@@ -416,7 +416,7 @@ nav { padding:16px 20px; }
   </div>
 </div>
 
-<div class="prod" data-cat="coques" data-compat="apple_iphone17pro"
+<div class="prod" data-cat="coques" data-compat="apple_iPhone 17 Pro"
   <div class="prod-img" style="background:#00080f">
     <div class="prod-badge b-sale">Promo</div>
     <div class="prod-icon-wrap">
@@ -433,7 +433,7 @@ nav { padding:16px 20px; }
   </div>
 </div>
 
-<div class="prod" data-cat="coques" data-compat="apple_iphone17pro"
+<div class="prod" data-cat="coques" data-compat="apple_iPhone 17 Pro"
   <div class="prod-img" style="background:#080808">
     <div class="prod-badge b-new">New</div>
     <div class="prod-icon-wrap">
@@ -450,7 +450,7 @@ nav { padding:16px 20px; }
   </div>
 </div>
 
-<div class="prod" data-cat="coques" data-compat="samsung_s24"
+<div class="prod" data-cat="coques" data-compat="samsung_s_Galaxy S24"
   <div class="prod-img" style="background:#06060f">
     <div class="prod-badge b-best">Best</div>
     <div class="prod-icon-wrap">
@@ -1001,9 +1001,10 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   const modele = document.getElementById('selectModele').value;
   if (!marque || !modele) return;
   const section = document.getElementById('prods');
-  section.style.display = 'block';
+  section.style.display = '';
   document.querySelectorAll('.prod').forEach(p => {
-  p.style.display = 'block';
+  p.style.display = (compat === 'tous' || compat.includes(marque + '_' + modele)) ? '' : 'none';
+
 });
 }
 
