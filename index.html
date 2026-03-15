@@ -253,17 +253,17 @@ nav { padding:16px 20px; }
 .ft-bottom { flex-direction:column; gap:14px; }
 .cart-panel { width:100%; }
 }
-  
 .phone-selector { margin-top: 28px; width: 100%; }
 .phone-selector-title { font-size: 11px; letter-spacing: 3px; color: #C9A84C; text-align: center; margin-bottom: 14px; font-weight: 600; }
-.phone-selector-row { display: flex; gap: 14px; justify-content: center; }
-.phone-select-wrap { position: relative; width: 45%; flex-shrink: 0; }
-.phone-select-btn { background: #000; color: #fff; border: 1px solid #C9A84C; padding: 16px 14px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; display: flex; justify-content: space-between; align-items: center; width: 100%; box-sizing: border-box; }
-.phone-select-btn span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.phone-selector-row { display: flex; gap: 14px; justify-content: center; width: 100%; }
+.phone-select-wrap { position: relative; flex: 1; min-width: 0; max-width: 45%; }
+.phone-select-btn { background: #000; color: #fff; border: 1px solid #C9A84C; padding: 16px 14px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; display: flex; justify-content: space-between; align-items: center; width: 100%; min-width: 0; box-sizing: border-box; }
+.phone-select-btn span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; flex: 1; }
 .phone-select-btn::after { content: '▼'; font-size: 8px; flex-shrink: 0; margin-left: 8px; color: #C9A84C; }
 .phone-dropdown { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #000; border: 1px solid #C9A84C; border-top: none; z-index: 100; max-height: 200px; overflow-y: auto; }
 .phone-dropdown button { display: block; width: 100%; text-align: left; background: none; border: none; padding: 10px 14px; font-size: 11px; color: #fff; cursor: pointer; letter-spacing: 1px; }
 .phone-dropdown.open { display: block; }
+
 
 
 </style>
@@ -315,7 +315,7 @@ nav { padding:16px 20px; }
     <a href="#cats" class="btn-outline">Voir les catégories</a>
   </div>
   
-<div class="phone-selector">
+  <div class="phone-selector">
   <p class="phone-selector-title">QUEL PORTABLE AVEZ-VOUS ?</p>
   <div class="phone-selector-row">
     <div class="phone-select-wrap" id="wrapMarque">
@@ -977,7 +977,6 @@ document.addEventListener('click', function(e) {
     document.querySelectorAll('.phone-dropdown').forEach(function(d) { d.classList.remove('open'); });
   }
 });
-
 
   const sel = document.getElementById('selectModele');
   sel.innerHTML = '<option value="">Modèle</option>';
