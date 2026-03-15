@@ -913,18 +913,21 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
 
 
 .phone-select-wrap {
-  flex: 1;
+  width: calc(50% - 7px);
   min-width: 0;
   overflow: hidden;
+  flex-shrink: 0;
 }
+
 
 .phone-select {
-  width: 100 !important ;
-  min-width: 0 !important ;
-  max-width: 100% !important ;
-  box-sizing: border-box !important ;  
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
 }
-
 
 
 </style>
