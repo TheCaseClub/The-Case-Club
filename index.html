@@ -1003,9 +1003,8 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   const section = document.getElementById('prods');
   section.style.display = 'block';
   document.querySelectorAll('.prod').forEach(p => {
-    const compat = p.dataset.compat || '';
-    p.style.display = (compat === 'tous' || compat.includes(marque + '_' + modele)) ? 'block' : 'none';
-  });
+  p.style.display = 'block';
+});
 }
 
 
