@@ -879,6 +879,26 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   }
 });
   }
+ // Gestion du filtrage par boutons de catégorie
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Retire la classe active de tous les boutons et l'ajoute au cliqué
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filtre = btn.getAttribute('data-filter');
+    const produits = document.querySelectorAll('.prod');
+
+    produits.forEach(prod => {
+      // Si "Tous" est cliqué ou si la catégorie correspond
+      if (filtre === 'all' || prod.getAttribute('data-cat') === filtre) {
+        prod.style.display = 'flex';
+      } else {
+        prod.style.display = 'none';
+      }
+    });
+  });
+});
 
 
 
