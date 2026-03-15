@@ -898,15 +898,29 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   gap: 14px;
 }
 
+.phone-selector {
+  width: 100%;
+  overflow: hidden;
+}
+
+.phone-selector-row {
+  display: flex;
+  gap: 14px;
+  width: 100%;
+}
+
 .phone-select-wrap {
+  flex: 1;
   min-width: 0;
+  overflow: hidden;
 }
 
 .phone-select {
   width: 100%;
   min-width: 0;
-  box-sizing: border-box;
+  max-width: 100%;
 }
+
 
 </style>
 
