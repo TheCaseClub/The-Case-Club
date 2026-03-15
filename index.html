@@ -129,10 +129,23 @@ h1.hero-title em { font-style:italic; color:var(–white); }
 
 
 .cat-filters { display:flex; gap:10px; flex-wrap:wrap; }
-.cf-btn, .cf-btn:link, .cf-btn:visited {
+/* Style par défaut : Noir avec texte et bordure Or */
+.filter-btn {
+  background-color: #000 !important;
   color: #C9A84C !important;
-  border-color: #C9A84C !important;
-  text-decoration: none !important;
+  border: 1px solid #C9A84C !important;
+  padding: 8px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Style quand sélectionné : Fond Or avec texte Noir */
+.filter-btn.active {
+  background-color: #C9A84C !important;
+  color: #000 !important;
+  font-weight: bold;
 }
 
 .cf-btn:hover, .cf-btn.cf-active { border-color:var(–gold); color:var(–gold); background:rgba(201,168,76,.07); }
@@ -378,13 +391,15 @@ nav { padding:16px 20px; }
   <div style="padding:60px 52px 32px; text-align:center; border-bottom:1px solid var(--border);">
     <div class="sec-eyebrow" style="margin-bottom:12px;">Bestsellers</div>
     <h2 class="sec-title" style="margin-bottom:32px;">Produits phares</h2>
-    <div class="cat-filters" style="justify-content:center;">
-      <button class="filter-btn active" data-filter="all">Tous</button>
-<button class="filter-btn" data-filter="coques">Coques</button>
-<button class="filter-btn" data-filter="chargeurs">Chargeurs</button>
-<button class="filter-btn" data-filter="protection">Protection</button>
-<button class="filter-btn" data-filter="magsafe">MagSafe</button>
-<button class="filter-btn" data-filter="camera">Caméra</button>
+    <div class="cat-filters" style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+  <button class="filter-btn active" data-filter="all">Tous</button>
+  <button class="filter-btn" data-filter="coques">Coques</button>
+  <button class="filter-btn" data-filter="chargeurs">Chargeurs</button>
+  <button class="filter-btn" data-filter="protection">Protection</button>
+  <button class="filter-btn" data-filter="magsafe">MagSafe</button>
+  <button class="filter-btn" data-filter="camera">Caméra</button>
+</div>
+
     </div>
   </div>
   <div class="prods-grid" id="prodsGrid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px;">
@@ -500,6 +515,90 @@ nav { padding:16px 20px; }
     <div class="prod-foot">
       <span class="prod-price">8.99&euro;</span>
       <button class="add-btn" data-id="314">&#128722;</button>
+    </div>
+  </div>
+</div>
+<div class="prod" data-cat="coques" data-compat="samsung_s_Galaxy S25 Ultra">
+  <div class="prod-img" style="background:#0a0a0a; display:flex; align-items:center; justify-content:center;">
+    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"></rect><path d="M12 18h.01"></path></svg>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">Galaxy S25 Ultra</div>
+    <div class="prod-name">Coque Renforcée Antichoc</div>
+    <div class="prod-foot">
+      <span class="prod-price">16.99&euro;</span>
+      <button class="add-btn" data-id="401">&#128722;</button>
+    </div>
+  </div>
+</div>
+<div class="prod" data-cat="protection" data-compat="samsung_s_Galaxy S26 Ultra">
+  <div class="prod-img" style="background:#0a0a0a; display:flex; align-items:center; justify-content:center;">
+    <div class="prod-badge b-new">New</div>
+    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><rect x="6" y="3" width="12" height="18" rx="2"></rect><line x1="8" y1="7" x2="16" y2="7"></line></svg>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">Galaxy S26 Ultra</div>
+    <div class="prod-name">Verre Trempé Protection Totale</div>
+    <div class="prod-foot">
+      <span class="prod-price">12.99&euro;</span>
+      <button class="add-btn" data-id="402">&#128722;</button>
+    </div>
+  </div>
+</div>
+<div class="prod" data-cat="chargeurs" data-compat="apple_samsung_tous">
+  <div class="prod-img" style="background:#0a0a0a; display:flex; align-items:center; justify-content:center;">
+    <div class="prod-badge b-best">Top</div>
+    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">Universel USB-C</div>
+    <div class="prod-name">Adaptateur Secteur Rapide 35W</div>
+    <div class="prod-foot">
+      <span class="prod-price">19.99&euro;</span>
+      <button class="add-btn" data-id="501">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="chargeurs" data-compat="apple_samsung_iPhone 17_Galaxy S25">
+  <div class="prod-img" style="background:#0a0a0a; display:flex; align-items:center; justify-content:center;">
+    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M12 2v20M7 7l5-5 5 5M7 17l5 5 5-5"></path></svg>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">iPhone 17 / Galaxy S25</div>
+    <div class="prod-name">Câble USB-C Tressé Renforcé (2m)</div>
+    <div class="prod-foot">
+      <span class="prod-price">12.99&euro;</span>
+      <button class="add-btn" data-id="502">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="chargeurs" data-compat="tous">
+  <div class="prod-img" style="background:#0a0a0a; display:flex; align-items:center; justify-content:center;">
+    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><rect x="7" y="2" width="10" height="15" rx="2"></rect><path d="M10 17v5M14 17v5M9 6h6"></path></svg>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">Accessoire Voiture</div>
+    <div class="prod-name">Chargeur Allume-Cigare Double USB-C</div>
+    <div class="prod-foot">
+      <span class="prod-price">14.99&euro;</span>
+      <button class="add-btn" data-id="503">&#128722;</button>
+    </div>
+  </div>
+</div>
+
+<div class="prod" data-cat="chargeurs" data-compat="apple_iPhone 17 Pro">
+  <div class="prod-img" style="background:#0a0a0a; display:flex; align-items:center; justify-content:center;">
+    <div class="prod-badge b-new">New</div>
+    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"></rect><circle cx="12" cy="12" r="3"></circle></svg>
+  </div>
+  <div class="prod-info">
+    <div class="prod-brand">iPhone / Watch / AirPods</div>
+    <div class="prod-name">Station de Charge Sans Fil 3-en-1</div>
+    <div class="prod-foot">
+      <span class="prod-price">34.99&euro;</span>
+      <button class="add-btn" data-id="504">&#128722;</button>
     </div>
   </div>
 </div>
