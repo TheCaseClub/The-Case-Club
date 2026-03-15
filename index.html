@@ -6,266 +6,274 @@
     <title>The Case Club - Accessoires Premium</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* RESET & BASE */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --gold: #C5A47E;
+            --black: #000000;
+            --dark-grey: #111111;
+            --white: #FFFFFF;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            background-color: #000;
-            color: #fff;
+            background-color: var(--black);
+            color: var(--white);
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* HEADER */
+        /* HEADER & HERO (TON STYLE ORIGINAL) */
         header {
-            padding: 20px;
+            padding: 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(197, 164, 126, 0.2);
+            border-bottom: 1px solid rgba(197, 164, 126, 0.1);
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 24px;
+            font-size: 26px;
             font-weight: bold;
-            color: #C5A47E;
+            color: var(--gold);
             text-decoration: none;
+            letter-spacing: 1px;
         }
 
         .cart-btn {
-            background: #fff;
-            color: #000;
-            padding: 8px 15px;
+            background: var(--white);
+            color: var(--black);
+            padding: 10px 20px;
             border: none;
             font-weight: bold;
-            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 12px;
-            text-transform: uppercase;
         }
 
-        /* HERO SECTION */
         .hero {
-            padding: 60px 20px;
+            padding: 80px 25px;
             text-align: center;
         }
 
         .collection-tag {
-            color: #C5A47E;
-            font-size: 12px;
-            letter-spacing: 3px;
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             display: block;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 42px;
+            font-size: 48px;
             line-height: 1.1;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             font-style: italic;
         }
 
         h1 span {
             display: block;
-            color: #C5A47E;
+            color: var(--gold);
             font-style: normal;
         }
 
         .hero-desc {
-            font-size: 16px;
-            color: #ccc;
-            max-width: 500px;
-            margin: 0 auto 40px;
+            font-size: 15px;
+            color: #888;
+            max-width: 450px;
+            margin: 0 auto 50px;
+            font-weight: 300;
         }
 
-        /* BOUTONS ACTIONS */
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            padding: 0 20px;
-        }
-
-        .btn {
-            padding: 18px;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 13px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
+        /* === RE-DESIGN DES SÉLECTEURS (TON STYLE MAIS PLUS PRO) === */
+        .selection-area {
+            padding: 40px 20px;
             text-align: center;
         }
 
-        .btn-gold {
-            background-color: #C5A47E;
-            color: #000;
-            border: none;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: #fff;
-            border: 1px solid #fff;
-        }
-
-        /* === SECTION SÉLECTION PREMIUM (CORRIGÉE) === */
-        .selection-section {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #050505;
-        }
-
-        .selection-title {
-            color: #C5A47E;
-            font-size: 12px;
+        .selection-label {
+            color: var(--gold);
+            font-size: 11px;
             letter-spacing: 2px;
-            font-weight: bold;
-            margin-bottom: 25px;
             text-transform: uppercase;
+            margin-bottom: 25px;
+            font-weight: 700;
         }
 
-        .dropdown-wrapper {
+        .custom-dropdown-container {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            max-width: 400px;
+            gap: 15px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
-        .custom-select {
-            position: relative;
-            flex: 1; /* Pour que les deux fassent la même taille */
-        }
-
-        .custom-select select {
-            width: 100%;
-            padding: 12px 15px;
-            background-color: #111;
-            border: 1px solid #C5A47E;
-            color: #fff;
-            font-size: 14px;
-            cursor: pointer;
-            appearance: none; /* Supprime le look moche par défaut */
-            -webkit-appearance: none;
-            border-radius: 0;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        /* Flèche personnalisée */
-        .custom-select::after {
-            content: '▼';
-            font-size: 10px;
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #C5A47E;
-            pointer-events: none;
-        }
-
-        .custom-select select:hover {
-            background-color: #C5A47E;
-            color: #000;
-        }
-
-        /* STATS */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            padding: 60px 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .stat-item h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            color: #C5A47E;
-        }
-
-        .stat-item p {
-            font-size: 11px;
+        /* Le bouton du menu */
+        .dropdown-trigger {
+            flex: 1;
+            background: transparent;
+            border: 1px solid var(--gold);
+            padding: 15px 20px;
+            color: var(--white);
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #888;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        /* FOOTER SIMULÉ */
-        footer {
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(197, 164, 126, 0.2);
+        .dropdown-trigger:hover {
+            background: rgba(197, 164, 126, 0.1);
         }
+
+        .dropdown-trigger i {
+            font-size: 10px;
+            color: var(--gold);
+            transition: transform 0.3s;
+        }
+
+        /* Liste des options (TON ANCIEN STYLE CACHÉ) */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #0a0a0a;
+            border: 1px solid var(--gold);
+            border-top: none;
+            display: none;
+            z-index: 100;
+            list-style: none;
+        }
+
+        .dropdown-item {
+            padding: 15px;
+            font-size: 12px;
+            color: #ccc;
+            border-bottom: 1px solid rgba(197, 164, 126, 0.1);
+            transition: 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* STATS (STYLE ORIGINAL) */
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background-color: rgba(197, 164, 126, 0.1);
+            margin-top: 60px;
+        }
+
+        .stat-box {
+            background-color: var(--black);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            color: var(--gold);
+            display: block;
+        }
+
+        .stat-text {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #555;
+        }
+
     </style>
 </head>
 <body>
 
     <header>
         <a href="#" class="logo">The Case Club</a>
-        <button class="cart-btn">
-            Panier <span style="background: #000; color:#fff; padding: 2px 6px; border-radius: 50%;">0</span>
-        </button>
+        <button class="cart-btn">Panier <span>0</span></button>
     </header>
 
     <section class="hero">
         <span class="collection-tag">Collection 2026 — Accessoires Premium</span>
         <h1>Protège ce qui <span>compte vraiment.</span></h1>
-        <p class="hero-desc">Des accessoires premium pour votre téléphone, soigneusement sélectionnés pour leur qualité et leur style. Livraison rapide, satisfaction garantie.</p>
-        
-        <div class="btn-group">
-            <a href="#" class="btn btn-gold">Explorer la collection</a>
-            <a href="#" class="btn btn-outline">Voir les catégories</a>
-        </div>
+        <p class="hero-desc">L'excellence au bout des doigts. Qualité premium sélectionnée pour votre style de vie.</p>
     </section>
 
-    <section class="selection-section">
-        <p class="selection-title">Quel portable avez-vous ?</p>
-        <div class="dropdown-wrapper">
-            <div class="custom-select">
-                <select>
-                    <option value="" disabled selected>Marque</option>
-                    <option value="apple">Apple</option>
-                    <option value="samsung">Samsung</option>
-                </select>
+    <div class="selection-area">
+        <p class="selection-label">Quel portable avez-vous ?</p>
+        <div class="custom-dropdown-container">
+            
+            <div style="position: relative; flex: 1;">
+                <div class="dropdown-trigger" onclick="toggleMenu('menu-marque')">
+                    <span id="label-marque">Marque</span>
+                    <i>▼</i>
+                </div>
+                <ul class="dropdown-menu" id="menu-marque">
+                    <li class="dropdown-item" onclick="selectItem('marque', 'Apple')">Apple</li>
+                    <li class="dropdown-item" onclick="selectItem('marque', 'Samsung')">Samsung</li>
+                </ul>
             </div>
-            <div class="custom-select">
-                <select>
-                    <option value="" disabled selected>Modèle</option>
-                    <option value="iphone15">iPhone 15 Pro</option>
-                    <option value="iphone14">iPhone 14 Pro</option>
-                    <option value="s24">Galaxy S24</option>
-                </select>
+
+            <div style="position: relative; flex: 1;">
+                <div class="dropdown-trigger" onclick="toggleMenu('menu-modele')">
+                    <span id="label-modele">Modèle</span>
+                    <i>▼</i>
+                </div>
+                <ul class="dropdown-menu" id="menu-modele">
+                    <li class="dropdown-item" onclick="selectItem('modele', 'iPhone 15 Pro')">iPhone 15 Pro</li>
+                    <li class="dropdown-item" onclick="selectItem('modele', 'Galaxy S24')">Galaxy S24</li>
+                </ul>
             </div>
+
+        </div>
+    </div>
+
+    <section class="stats">
+        <div class="stat-box">
+            <span class="stat-number">500+</span>
+            <span class="stat-text">Produits</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">48h</span>
+            <span class="stat-text">Livraison</span>
         </div>
     </section>
 
-    <section class="stats-grid">
-        <div class="stat-item">
-            <h2>500+</h2>
-            <p>Produits disponibles</p>
-        </div>
-        <div class="stat-item">
-            <h2>48h</h2>
-            <p>Livraison Express</p>
-        </div>
-    </section>
+    <script>
+        // RÉCUPÉRATION DE TES FONCTIONS ORIGINALES
+        function toggleMenu(id) {
+            const menu = document.getElementById(id);
+            const isVisible = menu.style.display === 'block';
+            
+            // Ferme tous les menus avant d'ouvrir le bon
+            document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+            
+            menu.style.display = isVisible ? 'none' : 'block';
+        }
 
-    <footer>
-        <p style="font-size: 10px; color: #555;">&copy; 2026 THE CASE CLUB. DESIGNED FOR EXCELLENCE.</p>
-    </footer>
+        function selectItem(type, value) {
+            document.getElementById('label-' + type).innerText = value;
+            document.getElementById('menu-' + type).style.display = 'none';
+        }
 
+        // Ferme si on clique ailleurs
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-trigger') && !event.target.matches('.dropdown-trigger span')) {
+                document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+            }
+        }
+    </script>
 </body>
 </html>
