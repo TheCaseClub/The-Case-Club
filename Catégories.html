@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catégories - The Case Club</title>
+    <style>
+        body { background-color: #000; color: #fff; font-family: sans-serif; margin: 0; padding: 20px; text-align: center; }
+        .header { margin-bottom: 40px; padding: 20px; border-bottom: 1px solid #C9A84C; }
+        .gold-title { color: #C9A84C; text-transform: uppercase; letter-spacing: 2px; }
+        
+        .cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 600px; margin: 0 auto; }
+        
+        .cat-card {
+            background: #0a0a0a;
+            border: 1px solid #333;
+            padding: 30px 10px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s;
+        }
+        .cat-card:hover { border-color: #C9A84C; transform: translateY(-5px); }
+        .cat-icon { font-size: 40px; margin-bottom: 10px; display: block; }
+        .cat-name { color: #C9A84C; font-weight: bold; }
+        
+        .back-btn { display: inline-block; margin-top: 40px; color: #fff; text-decoration: none; border-bottom: 1px solid #fff; padding-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1 class="gold-title">Nos Catégories</h1>
+    </div>
+
+    <div class="cat-grid">
+        <a href="index.html" class="cat-card">
+            <span class="cat-icon">📱</span>
+            <span class="cat-name">Coques</span>
+        </a>
+        <a href="index.html" class="cat-card">
+            <span class="cat-icon">⚡</span>
+            <span class="cat-name">Chargeurs</span>
+        </a>
+        <a href="index.html" class="cat-card">
+            <span class="cat-icon">🛡️</span>
+            <span class="cat-name">Protections</span>
+        </a>
+        <a href="index.html" class="cat-card">
+            <span class="cat-icon">🧲</span>
+            <span class="cat-name">MagSafe</span>
+        </a>
+    </div>
+
+    <a href="index.html" class="back-btn">← Retour à l'accueil</a>
+
+</body>
+</html>
