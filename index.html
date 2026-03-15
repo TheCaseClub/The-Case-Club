@@ -892,16 +892,14 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   .btn-gold {
   background: #C9A84C !important;
   color: #000 !
-.phone-selector-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
+
 
 .phone-selector {
   width: 100%;
   overflow: hidden;
+  box-sizing: border-box; 
 }
+
 
 .phone-selector-row {
   display: flex;
@@ -919,7 +917,9 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   width: 100%;
   min-width: 0;
   max-width: 100%;
+  box-sizing: border-box;  
 }
+
 
 
 </style>
