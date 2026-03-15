@@ -140,21 +140,6 @@ h1.hero-title em { font-style:italic; color:var(–white); }
   font-size: 14px;
   transition: all 0.3s ease;
 }
-  /* Ce code va supprimer l'espace vide sous les menus */
-#prods {
-    padding-top: 0 !important;
-    margin-top: -40px !important;
-}
-
-#prods h3 {
-    margin-top: 0 !important;
-    margin-bottom: 10px !important;
-}
-
-.cat-filters {
-    margin-bottom: 10px !important;
-}
-
 
 /* Style quand sélectionné : Fond Or avec texte Noir */
 .filter-btn.active {
@@ -334,7 +319,7 @@ nav { padding:16px 20px; }
   <p class="hero-desc">Des accessoires premium pour votre téléphone, soigneusement sélectionnés pour leur qualité et leur style. Livraison rapide, satisfaction garantie.</p>
   <div class="hero-cta">
     <a href="#prods" class="btn-gold">Explorer la collection</a>
-    <a href="categories.html" class="btn-outline">Voir les catégories</a>
+    <a href="#cats" class="btn-outline">Voir les catégories</a>
   </div>
   
 <div class="phone-selector">
@@ -590,7 +575,7 @@ nav { padding:16px 20px; }
       <div class="sec-eyebrow">Shop by Category</div>
       <h2 class="sec-title">Nos catégories</h2>
     </div>
-    <a href="categories.html" class="see-all">Tout voir →</a>
+    <a href="#" class="see-all">Tout voir →</a>
   </div>
   <div class="tvc-badge">
     <span class="tvc-dot"></span>
@@ -1013,26 +998,6 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const params = new URLSearchParams(window.location.search);
-    const filter = params.get('filter');
-
-    if (filter) {
-        const prodsSection = document.getElementById('prods');
-        if (prodsSection) {
-            prodsSection.style.display = 'block';
-            setTimeout(() => {
-                const btn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
-                if (btn) {
-                    btn.click();
-                    btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }, 300);
-        }
-    }
-});
-</script>
 
 
 
