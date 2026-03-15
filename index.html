@@ -963,6 +963,46 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   sel.innerHTML = '<option value="">Modèle</option>';
   (modeles[document.getElementById('selectMarque').value] || []).forEach(m => sel.innerHTML += `<option>${m}</option>`);
 }
+function toggleDropdown(which) {
+  var dropId = which === 'marque' ? 'dropMarque' : 'dropModele';
+  var drop = document.getElementById(dropId);
+  var isOpen = drop.classList.contains('open');
+  document.querySelectorAll('.phone-dropdown').forEach(function(d) { d.classList.remove('open'); });
+  if (!isOpen) drop.classList.add('open');
+}
+
+function selectMarque(val) {
+  var labels = { apple: 'APPLE', samsung_s: 'SAMSUNG SERIE S', samsung_a: 'SAMSUNG SERIE A', google: 'GOOGLE' };
+  document.getElementById('labelMarque').textContent = labels[val] || 'MARQUE';
+  document.getElementById('dropMarque').classList.remove('open');
+  document.getElementById('labelModele').textContent = 'MODÈLE';
+  var modeles = {
+    apple: ['iPhone 6','iPhone 6 Plus','iPhone 6s','iPhone 7','iPhone 8','iPhone X','iPhone XS','iPhone XR','iPhone 11','iPhone 12','iPhone 13','iPhone 14','iPhone 15','iPhone 16','iPhone 17'],
+    samsung_a: ['Galaxy A12','Galaxy A13','Galaxy A14','Galaxy A23','Galaxy A34','Galaxy A53','Galaxy A55'],
+    samsung_s: ['Galaxy S21','Galaxy S22','Galaxy S23','Galaxy S24','Galaxy S25'],
+    google: ['Pixel 6','Pixel 7','Pixel 8','Pixel 9']
+  };
+  var drop = document.getElementById('dropModele');
+  drop.innerHTML = '';
+  (modeles[val] || []).forEach(function(m) {
+    var btn = document.createElement('button');
+    btn.textContent = m;
+    btn.onclick = function() { selectModele(m); };
+    btn.style.cssText = 'display:block;width:100%;text-align:left;background:none;border:none;padding:10px 14px;font-size:11px;color:#fff;cursor:pointer;letter-spacing:1px;';
+    drop.appendChild(btn);
+  });
+}
+
+function selectModele(val) {
+  document.getElementById('labelModele').textContent = val ? val.toUpperCase() : 'MODÈLE';
+  document.getElementById('dropModele').classList.remove('open');
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.phone-select-wrap')) {
+    document.querySelectorAll('.phone-dropdown').forEach(function(d) { d.classList.remove('open'); });
+  }
+});
 
 
 </script>
