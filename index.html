@@ -1018,28 +1018,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
     const filter = params.get('filter');
 
-    // On n'exécute le clic automatique QUE si un filtre est précisé dans l'URL
     if (filter) {
         const prodsSection = document.getElementById('prods');
         if (prodsSection) {
-            // On s'assure que la section est visible
             prodsSection.style.display = 'block';
-            
             setTimeout(() => {
                 const btn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
                 if (btn) {
-                    // On active le filtre sans perturber le reste
                     btn.click();
                     btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                    // Nettoyage : on enlève le paramètre de l'URL pour éviter les bugs au rafraîchissement
-                    window.history.replaceState({}, document.title, window.location.pathname);
                 }
-            }, 500); // On laisse un peu plus de temps (0.5s) pour que les menus se chargent
+            }, 300);
         }
     }
 });
 </script>
+
+
+
 
 </script>
 </body>
