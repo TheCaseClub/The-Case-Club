@@ -311,7 +311,7 @@ nav { padding:16px 20px; }
   <p class="phone-selector-title">QUEL PORTABLE AVEZ-VOUS ?</p>
   <div class="phone-selector-row">
     <div class="phone-select-wrap">
-      <select class="phone-select" id="selectMarque" onchange="updateModeles()">
+    <select class="phone-select" id="selectMarque" onchange="updateModeles()" style="width:100%; box-sizing:border-box;">
         <option value="">Marque</option>
         <option value="apple">Apple</option>
         <option value="samsung_s">Samsung Serie S</option>
@@ -320,7 +320,7 @@ nav { padding:16px 20px; }
       </select>
     </div>
     <div class="phone-select-wrap">
-      <select class="phone-select" id="selectModele">
+      <select class="phone-select" id="selectModele" style="width:100%; box-sizing:border-box;">
         <option value="">Modèle</option>
       </select>
     </div>
@@ -914,10 +914,10 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
 }
 
 .phone-select {
-  width: 100%;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;  
+  width: 100 !important ;
+  min-width: 0 !important ;
+  max-width: 100% !important ;
+  box-sizing: border-box !important ;  
 }
 
 
