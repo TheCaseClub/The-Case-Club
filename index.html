@@ -1096,63 +1096,28 @@ function showAdditionPopup(product) {
     }, 2000);
 }
 </script>
-<script>
-// 1. Initialisation : on récupère le panier stocké ou on en crée un vide
-let cart = JSON.parse(localStorage.getItem('theCaseClubCart')) || [];
-
-// 2. Fonction pour ajouter un produit au panier
-function addToCart(name, price, model) {
-    // On ajoute l'article au tableau
-    cart.push({
-        name: name,
-        price: price,
-        model: model
-    });
-
-    // On sauvegarde dans la mémoire du téléphone/navigateur
-    localStorage.setItem('theCaseClubCart', JSON.stringify(cart));
-
-    // On met à jour l'affichage du chiffre
-    updateCartDisplay();
-
-    // Optionnel : On ouvre le panier automatiquement pour montrer que ça a marché
-    openCart();
-}
-
-// 3. Fonction pour mettre à jour le chiffre dans le rond noir (cart-n)
-function updateCartDisplay() {
-    const badge = document.querySelector('.cart-n');
-    if (badge) {
-        badge.innerText = cart.length;
-        // On affiche le badge seulement s'il y a au moins 1 article
-        badge.style.display = cart.length > 0 ? 'flex' : 'none';
+    
+// --- Bloc à remplacer pour le filtrage intelligent ---
+document.addEventListener('DOMContentLoaded', function() {
+    const filter = new URLSearchParams(window.location.search).get('filter');
+    if (filter) {
+        // On attend que TOUT soit prêt (images, menus, scripts tiers)
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const btn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+                if (btn) {
+                    // On simule le clic sans bloquer les autres scripts
+                    btn.dispatchEvent(new Event('click', { bubbles: true }));
+                    btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // On nettoie l'URL sans recharger la page
+                    window.history.replaceState({}, '', window.location.pathname);
+                }
+            }, 500); // Délai de sécurité pour laisser tes menus Apple/Samsung s'initialiser
+        });
     }
-}
-
-// 4. Fonctions pour Ouvrir et Fermer le panneau latéral
-function openCart() {
-    const panel = document.getElementById('cartPanel');
-    const overlay = document.getElementById('cartOverlay');
-    if (panel && overlay) {
-        panel.classList.add('open');
-        overlay.classList.add('open');
-    }
-}
-
-function closeCart() {
-    const panel = document.getElementById('cartPanel');
-    const overlay = document.getElementById('cartOverlay');
-    if (panel && overlay) {
-        panel.classList.remove('open');
-        overlay.classList.remove('open');
-    }
-}
-
-// 5. Au chargement de la page, on affiche le chiffre du panier sauvegardé
-document.addEventListener('DOMContentLoaded', updateCartDisplay);
-</script>
-
-
+}); 
+    
 </script>
 </body>
 </html>
