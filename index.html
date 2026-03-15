@@ -998,6 +998,7 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   const marque = document.getElementById('selectMarque').value;
   const modele = document.getElementById('selectModele').value;
   if (!marque || !modele) return;
+    alert(marque + '_' + modele);
   const section = document.getElementById('prods');
   section.style.display = '';
   document.querySelectorAll('.prod').forEach(p => {
