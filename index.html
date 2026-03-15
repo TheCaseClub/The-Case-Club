@@ -1018,36 +1018,6 @@ document.addEventListener('click', function(e) {
     document.querySelectorAll('.phone-dropdown').forEach(function(d) { d.classList.remove('open'); });
   }
 });
-  
-document.addEventListener('touchstart', function(e) {
-  var btnM = e.target.closest('#btnMarque');
-  var btnMo = e.target.closest('#btnModele');
-  if (btnM) { e.preventDefault(); toggleDropdown('marque'); return; }
-  if (btnMo) { e.preventDefault(); toggleDropdown('modele'); return; }
-  if (!e.target.closest('.phone-select-wrap')) {
-    document.querySelectorAll('.phone-dropdown').forEach(function(d) { d.classList.remove('open'); });
-  }
-}, {passive: false});
-
-  }
-});
-
-document.getElementById('btnMarque').addEventListener('touchend', function(e) {
-  e.preventDefault(); e.stopPropagation(); toggleDropdown('marque');
-});
-document.getElementById('btnModele').addEventListener('touchend', function(e) {
-  e.preventDefault(); e.stopPropagation(); toggleDropdown('modele');
-});
-document.getElementById('dropMarque').addEventListener('touchend', function(e) {
-  e.stopPropagation();
-  var t = e.target.closest('div');
-  if (t && t.getAttribute('onclick')) {
-    var m = t.getAttribute('onclick').match(/selectMarque\('([^']+)'\)/);
-    if (m) { e.preventDefault(); selectMarque(m[1]); }
-  }
-});
-
-
 
 </script>
 </body>
