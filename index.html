@@ -1013,6 +1013,26 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    const filter = params.get('filter');
+
+    if (filter) {
+        const prodsSection = document.getElementById('prods');
+        if (prodsSection) {
+            prodsSection.style.display = 'block';
+            setTimeout(() => {
+                const btn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+                if (btn) {
+                    btn.click();
+                    btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 300);
+        }
+    }
+});
+</script>
 
 
 
