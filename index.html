@@ -991,6 +991,21 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   const sel = document.getElementById('selectModele');
   sel.innerHTML = '<option value="">Modèle</option>';
   (modeles[document.getElementById('selectMarque').value] || []).forEach(m => sel.innerHTML += `<option>${m}</option>`);
+
+    document.getElementById('prods').style.display = 'none';
+
+}
+
+  function filtrerProduits() {
+  const marque = document.getElementById('selectMarque').value;
+  const modele = document.getElementById('selectModele').value;
+  if (!marque || !modele) return;
+  const section = document.getElementById('prods');
+  section.style.display = 'block';
+  document.querySelectorAll('.prod').forEach(p => {
+    const compat = p.dataset.compat || '';
+    p.style.display = (compat === 'tous' || compat.includes(marque + '_' + modele)) ? 'block' : 'none';
+  });
 }
 
 
