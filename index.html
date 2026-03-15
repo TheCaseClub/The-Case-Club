@@ -892,12 +892,6 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   .btn-gold {
   background: #C9A84C !important;
   color: #000 !
-    
-.phone-selector-row { display: flex; gap: 14px; justify-content: center; }
-.phone-select-wrap { width: calc(50% - 7px); max-width: calc(50% - 7px); flex-shrink: 0; overflow: hidden; }
-.phone-select { width: 100%; max-width: 100%; -webkit-appearance: none; appearance: none; background: #000; color: #fff; border: 1px solid #C9A84C; padding: 16px 14px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; }
-
-
 .phone-selector-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -905,13 +899,14 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
 }
 
 .phone-select-wrap {
-  width: 100%;
+  min-width: 0;
 }
 
 .phone-select {
   width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
-
 
 </style>
 
