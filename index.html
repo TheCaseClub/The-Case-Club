@@ -106,7 +106,7 @@ h1.hero-title em { font-style:italic; color:var(–white); }
 
 /* PRODUCTS */
 /* PRODUCTS */
-.prods-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+.prods-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; align-items:start; }
 .prod { background:#0d0d0d; border:1px solid #1f1f1f; border-radius:12px; overflow:hidden; cursor:pointer; transition:transform .3s,border-color .3s; position:relative; }
 .prod:hover { transform:translateY(-3px); border-color:var(--gold); }
 .prod-img { height:180px; display:flex; align-items:center; justify-content:center; background:#111; border-bottom:1px solid #1f1f1f; }
@@ -398,7 +398,7 @@ nav { padding:16px 20px; }
   </div>
   <div class="prods-grid" id="prodsGrid">
 
-```
+
 <div class="prod" data-cat="coques" data-compat="apple_iPhone 16"
   <div class="prod-img" style="background:#0f0a00">
     <div class="prod-badge b-best">Best</div>
@@ -1003,10 +1003,15 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   const section = document.getElementById('prods');
   section.style.display = '';
   document.querySelectorAll('.prod').forEach(p => {
-  p.style.display = (compat === 'tous' || compat.includes(marque + '_' + modele)) ? '' : 'none';
-
+  const compat = p.dataset.compat || '';
+  if (compat === 'tous' || compat.includes(marque + '_' + modele)) {
+    p.style.display = '';
+    p.style.visibility = 'visible';
+  } else {
+    p.style.display = 'none';
+  }
 });
-}
+
 
 
 </script>
