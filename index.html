@@ -11,15 +11,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --black:      #000000;
-    --dark:       #080808;
-    --card:       #0d0d0d;
-    --border:     #1a1a1a;
-    --gold:       #C9A84C;
-    --gold-light: #E8C96A;
-    --white:      #FFFFFF;
-    --muted:      #888888;
-  }
+    --black: #ffffff; /* Le fond devient blanc */
+    --white: #1a1a1a; /* Le texte devient noir/anthracite */
+    --gold: #C9A84C;  /* On garde l'or tel quel */
+    --border: #eeeeee; /* On crée une bordure légère pour les blocs */
+}
+
   *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
   body { background:var(--black); color:var(--white); font-family:'DM Sans',sans-serif; overflow-x:hidden; cursor:none; }
