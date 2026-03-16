@@ -1401,50 +1401,44 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
 
 }
 
-  function updateModeles() {
+  function filtrerProduits() {
   const marque = document.getElementById('selectMarque').value;
-  const sel = document.getElementById('selectModele');
-  sel.innerHTML = '<option value="">Modèle</option>';
-  
-  if (marque && modeles[marque]) {
-    modeles[marque].forEach(m => {
-      // On crée la valeur technique (ex: apple_iPhone 17 Pro Max)
-      const val = marque + "_" + m; 
-      sel.innerHTML += `<option value="${val}">${m}</option>`;
-    });
+  const modele = document.getElementById('selectModele').value;
+  if (!marque || !modele) return;
+
+  const section = document.getElementById('prods');
+  section.style.display = '';
+  document.querySelectorAll('.prod').forEach(p => {
+  const compat = (p.dataset.compat || '').toLowerCase();
+  const key = (marque + '_' + modele).toLowerCase();
+  if (compat === 'tous' || compat.includes(key)) {
+    p.style.display = '';
+    p.style.visibility = 'visible';
+  } else {
+    p.style.display = 'none';
   }
-  // On cache la grille si on change de marque
-  document.getElementById('prods').style.display = 'none';
-}
+});
+  }
+ // Gestion du filtrage par boutons de catégorie
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Retire la classe active de tous les boutons et l'ajoute au cliqué
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-function filtrerProduits() {
-  const modeleSelectionne = document.getElementById('selectModele').value;
-  const btnActif = document.querySelector('.filter-btn.active');
-  const categorieActive = btnActif ? btnActif.dataset.filter : 'tous';
+    const filtre = btn.getAttribute('data-filter');
+    const produits = document.querySelectorAll('.prod');
 
-  const produits = document.querySelectorAll('.prod');
-  let count = 0;
-
-  produits.forEach(p => {
-    const cat = p.getAttribute('data-cat');
-    const compat = p.getAttribute('data-compat');
-
-    // Condition : C'est la bonne catégorie ET (c'est universel OU c'est le bon modèle)
-    const matchCat = (categorieActive === 'tous' || cat === categorieActive);
-    const matchModele = (compat === 'universel' || compat === modeleSelectionne);
-
-    if (matchCat && matchModele) {
-      p.style.display = 'block';
-      count++;
-    } else {
-      p.style.display = 'none';
-    }
+    produits.forEach(prod => {
+      // Si "Tous" est cliqué ou si la catégorie correspond
+      if (filtre === 'all' || prod.getAttribute('data-cat') === filtre) {
+        prod.style.display = 'flex';
+      } else {
+        prod.style.display = 'none';
+      }
+    });
   });
-
-  // Affiche la grille seulement si un modèle est choisi et qu'il y a des résultats
-  document.getElementById('prods').style.display = (modeleSelectionne && count > 0) ? 'block' : 'none';
-}
-
+});
 
 
 
