@@ -1402,43 +1402,32 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
 }
 
   function filtrerProduits() {
-  const marque = document.getElementById('selectMarque').value;
-  const modele = document.getElementById('selectModele').value;
-  if (!marque || !modele) return;
+    // 1. On récupère les valeurs sélectionnées
+    const marqueSelectionnee = document.getElementById('selectMarque').value; // ex: apple
+    const modeleSelectionne = document.getElementById('selectModele').value; // ex: apple_iPhone 17 Pro Max
+    const categorieActive = document.querySelector('.filter-btn.active').dataset.filter; // ex: chargeurs
 
-  const section = document.getElementById('prods');
-  section.style.display = '';
-  document.querySelectorAll('.prod').forEach(p => {
-  const compat = (p.dataset.compat || '').toLowerCase();
-  const key = (marque + '_' + modele).toLowerCase();
-  if (compat === 'tous' || compat.includes(key)) {
-    p.style.display = '';
-    p.style.visibility = 'visible';
-  } else {
-    p.style.display = 'none';
-  }
-});
-  }
- // Gestion du filtrage par boutons de catégorie
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    // Retire la classe active de tous les boutons et l'ajoute au cliqué
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const filtre = btn.getAttribute('data-filter');
     const produits = document.querySelectorAll('.prod');
 
-    produits.forEach(prod => {
-      // Si "Tous" est cliqué ou si la catégorie correspond
-      if (filtre === 'all' || prod.getAttribute('data-cat') === filtre) {
-        prod.style.display = 'flex';
-      } else {
-        prod.style.display = 'none';
-      }
+    produits.forEach(produit => {
+        const catProduit = produit.getAttribute('data-cat'); //
+        const compatProduit = produit.getAttribute('data-compat'); //
+
+        // Condition 1 : Est-ce la bonne catégorie ? (ou "tous")
+        const matchCat = (categorieActive === 'tous' || catProduit === categorieActive);
+
+        // Condition 2 : Est-ce compatible ? 
+        // On affiche si c'est "universel" OU si ça correspond exactement au modèle choisi
+        const matchModele = (compatProduit === 'universel' || compatProduit === modeleSelectionne);
+
+        // On affiche seulement si les deux conditions sont vraies
+        if (matchCat && matchModele) {
+            produit.style.display = 'block';
+        } else {
+            produit.style.display = 'none';
+        }
     });
-  });
-});
+}
 
 
 
