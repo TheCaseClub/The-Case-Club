@@ -1404,39 +1404,45 @@ document.addEventListener(‘mousemove’,function(e){ mx=e.clientX; my=e.client
   function filtrerProduits() {
   const marque = document.getElementById('selectMarque').value;
   const modele = document.getElementById('selectModele').value;
+  
+  // On récupère le bouton de catégorie qui est actuellement "active"
+  const btnActif = document.querySelector('.filter-btn.active');
+  const filtreCat = btnActif ? btnActif.getAttribute('data-filter') : 'all';
+
   if (!marque || !modele) return;
 
   const section = document.getElementById('prods');
-  section.style.display = '';
+  section.style.display = 'block';
+
   document.querySelectorAll('.prod').forEach(p => {
-  const compat = (p.dataset.compat || '').toLowerCase();
-  const key = (marque + '_' + modele).toLowerCase();
-  if (compat === 'tous' || compat.includes(key)) {
-    p.style.display = '';
-    p.style.visibility = 'visible';
-  } else {
-    p.style.display = 'none';
-  }
-});
-  }
- // Gestion du filtrage par boutons de catégorie
+    const catProduit = p.getAttribute('data-cat');
+    const compatProduit = (p.dataset.compat || '').toLowerCase();
+    const maSelection = (marque + '_' + modele).toLowerCase();
+
+    // Vérification 1 : La compatibilité (Modèle ou Universel)
+    const matchModele = (compatProduit === 'universel' || compatProduit === 'tous' || compatProduit.includes(maSelection));
+    
+    // Vérification 2 : La catégorie
+    const matchCat = (filtreCat === 'all' || filtreCat === 'tous' || catProduit === filtreCat);
+
+    // On affiche seulement si les DEUX sont vrais
+    if (matchModele && matchCat) {
+      p.style.display = 'flex';
+      p.style.visibility = 'visible';
+    } else {
+      p.style.display = 'none';
+    }
+  });
+}
+
+// Gestion des clics sur les boutons de catégorie
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    // Retire la classe active de tous les boutons et l'ajoute au cliqué
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
-    const filtre = btn.getAttribute('data-filter');
-    const produits = document.querySelectorAll('.prod');
-
-    produits.forEach(prod => {
-      // Si "Tous" est cliqué ou si la catégorie correspond
-      if (filtre === 'all' || prod.getAttribute('data-cat') === filtre) {
-        prod.style.display = 'flex';
-      } else {
-        prod.style.display = 'none';
-      }
-    });
+    
+    // Une fois le bouton cliqué, on relance la fonction globale
+    filtrerProduits();
   });
 });
 
