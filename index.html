@@ -167,15 +167,69 @@ h1.hero-title em { font-style:italic; color:var(–white); }
 .prod-modal-btn:hover { opacity:.85; }
 
 /* HOW */
-.how { padding:80px 52px; border-top:1px solid var(–border); border-bottom:1px solid var(–border); background:var(–dark); }
-.how-title { font-family:‘Playfair Display’,serif; font-size:clamp(26px,3vw,42px); font-weight:700; color:var(–gold); text-align:center; margin-bottom:56px; }
-.how-grid { display:grid; grid-template-columns:repeat(4,1fr); }
-.how-step { padding:0 36px; border-right:1px solid var(–border); text-align:center; }
-.how-step:last-child { border-right:none; }
-.how-num { display:none; }
-.how-icon { font-size:28px; margin:-14px 0 14px; }
-.how-step-t { font-size:13px; font-weight:600; color:var(–gold); margin-bottom:8px; }
-.how-step-d { font-size:13px; color:var(–white); line-height:1.65; }
+.how { 
+  padding: 100px 20px; 
+  border-top: 1px solid var(--border); 
+  border-bottom: 1px solid var(--border); 
+  background: var(--black); /* Noir total pour plus de luxe */
+}
+
+.how-title { 
+  font-family: 'Playfair Display', serif; 
+  font-size: clamp(24px, 4vw, 36px); 
+  font-weight: 400; /* Plus fin pour l'élégance */
+  color: var(--gold); 
+  text-align: center; 
+  margin-bottom: 80px; 
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.how-grid { 
+  display: grid; 
+  /* On passe à 2 colonnes seulement pour laisser le texte respirer */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 80px 40px; 
+  max-width: 1000px; 
+  margin: 0 auto; 
+}
+
+.how-step { 
+  padding: 0 20px; 
+  text-align: center; 
+}
+
+/* On supprime les bordures de colonnes qui serrent le texte */
+.how-step:last-child { border-right: none; }
+
+.how-icon { 
+  font-size: 32px; 
+  margin-bottom: 20px; 
+  display: block;
+}
+
+.how-step-t { 
+  font-size: 16px; 
+  font-weight: 500; 
+  color: var(--gold); 
+  margin-bottom: 16px; 
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.how-step-d { 
+  font-size: 14px; 
+  color: var(--muted); /* Utilise le gris doux pour plus de sobriété */
+  line-height: 1.8; /* Espace entre les lignes pour la clarté */
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Ajustement pour mobile */
+@media (max-width: 768px) {
+  .how-grid { gap: 60px; }
+  .how { padding: 60px 24px; }
+}
 
 /* BANNER */
 .banner { margin:0 52px; padding:72px 68px; background:var(–card); border:1px solid var(–border); display:flex; justify-content:space-between; align-items:center; position:relative; overflow:hidden; }
